@@ -1,7 +1,7 @@
 $(function () {
 
-  drop($("svg.title path"), 0, 100, false);
-  drop($(".thumb"), 1500, 25, true);
+  drop($("svg.title path"), 0, 100, false, "bounceInUp");
+  drop($(".thumb"), 2000, 25, true, "boundInDown");
 
   viewer.init($("#viewer"), "");
   $(".thumb").on("click", function () {
@@ -11,7 +11,7 @@ $(function () {
 });
 
 
-function drop ($elems, delay, duration, shuffle) {
+function drop ($elems, delay, duration, shuffle, animationType) {
   $elems.hide().addClass("animated");
   window.setTimeout(
     function () {
@@ -21,7 +21,7 @@ function drop ($elems, delay, duration, shuffle) {
       })
       .forEach(function (item, i) {
         _.delay(function () {
-          $(item).show().addClass("bounceInDown")
+          $(item).show().addClass($(item).data("anim") || animationType || "bounceInDown")
         }, i * (duration || 50));
       })
     },
