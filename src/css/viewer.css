@@ -1,0 +1,31 @@
+#viewer {
+  position: fixed; display: block; overflow: hidden;
+  background-color: #333;
+  border: none;
+}
+
+body.viewer-isopen {
+  overflow: hidden;
+}
+
+.viewerClose:before {
+  display: block; position: fixed;
+  top: 0; /*right: 16px;*/ right: 0; line-height: 0.5;
+  color: #fff;
+  font-size: 5rem; font-weight: 400;
+  content: "×";
+  opacity: 0.5;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.viewerClose:hover:before, .viewerClose.on:before {
+  opacity: 1;
+}
+
+.viewerContent {
+  position: absolute; overflow: hidden;
+  left:0; top: 0; right: 0; bottom: 0;
+}
+
+
