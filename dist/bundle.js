@@ -1,12 +1,15 @@
+(function () {
+'use strict';
+
 // NB: dependencies: jQuery, lodash (currently globlals)
 
 /*! Tiny Pub/Sub - v0.7.0 - 2013-01-29
 * https://github.com/cowboy/jquery-tiny-pubsub
 * Copyright (c) 2013 "Cowboy" Ben Alman; Licensed MIT */
-(function(n){var u=n({});n.subscribe=function(){u.on.apply(u,arguments)},n.unsubscribe=function(){u.off.apply(u,arguments)},n.publish=function(){u.trigger.apply(u,arguments)}})(jQuery);
+(function(n){var u=n({});n.subscribe=function(){u.on.apply(u,arguments);},n.unsubscribe=function(){u.off.apply(u,arguments);},n.publish=function(){u.trigger.apply(u,arguments);};})(jQuery);
 
 
-const Viewer = (() => {
+var Viewer = (function () {
   var lastId = 0;
 
   return function (options) {
@@ -46,7 +49,7 @@ const Viewer = (() => {
 
 
 Viewer.prototype.open = function ($source) {
-  if (this._isOpen === true || this.isViewerAnimationRunning === true) return;
+  if (this._isOpen === true || this.isViewerAnimationRunning === true) { return; }
 
   var self = this;
   self.$source = $source;
@@ -80,10 +83,10 @@ Viewer.prototype.open = function ($source) {
         $("body").addClass(self.className + "-isopen");
         // this.$content.append(template($source));
         self.$el
-        .css({ "transition-duration": "0ms" }) // Important to prevent $viewer animation on window resize
+        .css({ "transition-duration": "0ms" }); // Important to prevent $viewer animation on window resize
         // $viewer.scrollTop(0).perfectScrollbar("update");
         self.$close.show();
-        self.$close.one("click", () => { self.close(); });
+        self.$close.one("click", function () { self.close(); });
 
         $(document).on("keydown", function(e) {
           if (e.which === 27) {
@@ -114,7 +117,7 @@ Viewer.prototype.open = function ($source) {
  * Note: Trying to close a closed viewer doesn't trigger a `close` event. (Clients can use the `isOpen` method to check the viewer's status.)
  */
 Viewer.prototype.close = function () {
-  if (this._isOpen === false || this.isViewerAnimationRunning === true) return;
+  if (this._isOpen === false || this.isViewerAnimationRunning === true) { return; }
 
   var self = this;
   var coords = coordinates(self.$prevSource);
@@ -127,7 +130,7 @@ Viewer.prototype.close = function () {
     self.$content.empty();
   }
 
-  window.setTimeout(() => {
+  window.setTimeout(function () {
     self.$el
     .css({
       top: coords.top + "px",
@@ -157,7 +160,7 @@ Viewer.prototype.on = function (event, callback) {
 };
 
 Viewer.prototype.one = function (event, callback) {
-  $.subscribe(event, () => {
+  $.subscribe(event, function () {
     callback();
     $.unsubscribe(event);
   });
@@ -165,15 +168,15 @@ Viewer.prototype.one = function (event, callback) {
 
 Viewer.prototype.$el = function () {
   return this.$el;
-}
+};
 
 Viewer.prototype.$content = function () {
   return this.$el.children(self.options.className + "-content");
-}
+};
 
 Viewer.prototype.isOpen = function () {
   return !!this._isOpen;
-}
+};
 
 function coordinates ($el) {
   if (!!$el) {
@@ -186,4 +189,56 @@ function coordinates ($el) {
   } else { return { left: 0, top: 0, width: 0, height: 0 }; }
 }
 
-export default Viewer;
+$(function () {
+
+  var v = new Viewer({
+    top: "24px",
+    left: "24px",
+    width: "50vw",
+    height: "calc(100vh - 64px)"
+  });
+
+  drop($("svg.title path"), 0, 100, false, "bounceInUp");
+  drop($(".thumb"), 2000, 25, true, "bounceInDown");
+
+  v.on("viewer.open", function () {
+    v.$content.append("<p>Hullo there!</p>");
+  });
+
+  $(".thumb").on("click", function () {
+    var this$1 = this;
+
+    if (v.isOpen()) {
+      v.close();
+      var e = v.one("viewer.close", function () { v.open($(this$1)); }); // NOTE: The arrow function preserves `this`.
+    } else {
+      v.open($(this));
+    }
+  });
+
+
+
+
+});
+
+
+function drop ($elems, delay, duration, shuffle, animationType) {
+  $elems.hide().addClass("animated");
+  window.setTimeout(
+    function () {
+      _($elems)
+      .thru(function (items) {
+        return (!!shuffle ? _(items).shuffle().value() : _(items).value());
+      })
+      .forEach(function (item, i) {
+        _.delay(function () {
+          $(item).show().addClass($(item).data("anim") || animationType || "bounceInDown");
+        }, i * (duration || 50));
+      });
+    },
+    (delay || 0)
+  );
+}
+
+}());
+//# sourceMappingURL=bundle.js.map

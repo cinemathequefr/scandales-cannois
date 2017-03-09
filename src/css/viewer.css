@@ -1,14 +1,16 @@
-#viewer {
+.viewer {
   position: fixed; display: block; overflow: hidden;
+  width: 0; height: 0;
   background-color: #333;
   border: none;
+  box-sizing: border-box;
 }
 
 body.viewer-isopen {
   overflow: hidden;
 }
 
-.viewerClose:before {
+.viewer-close:before {
   display: block; position: fixed;
   top: 4px; /*right: 16px;*/ right: 4px; line-height: 0.5;
   color: #f33;
@@ -19,11 +21,11 @@ body.viewer-isopen {
   transition: 0.25s;
 }
 
-.viewerClose:hover:before, .viewerClose.on:before {
+.viewer-close:hover:before, .viewer-close.on:before {
   opacity: 1;
 }
 
-.viewerContent {
+.viewer-content {
   position: absolute; overflow: hidden;
   left:0; top: 0; right: 0; bottom: 0;
 }

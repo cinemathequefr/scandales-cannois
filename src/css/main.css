@@ -52,7 +52,7 @@ svg.title path {
   background-image: url(../../img/tit.jpg); background-position: 50% 50%; background-size: cover;
 }
 
-#viewer {
+.viewer {
   background-color: #fff;
   opacity: 0.95;
 }
