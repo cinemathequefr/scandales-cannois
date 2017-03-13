@@ -17,6 +17,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "lodash-es": "^4.17.4"
+    "lodash-es": "^4.17.4",
+    "velocity-animate": "^1.4.3"
   }
 }

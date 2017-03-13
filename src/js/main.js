@@ -1,11 +1,37 @@
 import Viewer from "./viewer.js";
 
 
-
-
-
 $(function () {
 
+  var v = new Viewer({
+    duration: 500,
+    easing: "easeInOutQuad"
+  });
+
+  $(".thumb").on("click", function() {
+    v.open($(this));
+  });
+
+  v.on("viewer.open", (e) => {
+    console.log("open");
+  });
+
+  v.on("viewer.close", (e) => {
+    console.log("close");
+  });
+
+
+  // console.log(v);
+  // v.open();
+
+});
+
+
+
+
+
+/*
+$(function() {
   var v = new Viewer({
     top: "24px",
     left: "24px",
@@ -20,35 +46,35 @@ $(function () {
     v.$content.append("<p>Hullo there!</p>");
   });
 
-  $(".thumb").on("click", function () {
+  $(".thumb").on("click", function() {
     if (v.isOpen()) {
       v.close();
-      var e = v.one("viewer.close", () => { v.open($(this)); }); // NOTE: The arrow function preserves `this`.
+      v.one("viewer.close", () => {
+        v.open($(this));
+      }); // NOTE: The arrow function preserves `this`.
     } else {
       v.open($(this));
     }
   });
-
-
-
-
 });
+*/
 
 
-function drop ($elems, delay, duration, shuffle, animationType) {
+
+function drop($elems, delay, duration, shuffle, animationType) {
   $elems.hide().addClass("animated");
   window.setTimeout(
-    function () {
+    function() {
       _($elems)
-      .thru(function (items) {
-        return (!!shuffle ? _(items).shuffle().value() : _(items).value());
-      })
-      .forEach(function (item, i) {
-        _.delay(function () {
-          $(item).show().addClass($(item).data("anim") || animationType || "bounceInDown")
-        }, i * (duration || 50));
-      })
+        .thru(function(items) {
+          return (!!shuffle ? _(items).shuffle().value() : _(items).value());
+        })
+        .forEach(function(item, i) {
+          _.delay(function() {
+            $(item).show().addClass($(item).data("anim") || animationType || "bounceInDown");
+          }, i * (duration || 50));
+        });
     },
     (delay || 0)
-  )
+  );
 }
