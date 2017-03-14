@@ -6,6 +6,8 @@
 
 import * as velocity from "velocity-animate"; 
 
+
+// TODO: add perfectScrollbar, allow to set amargin around the viewer
 const Viewer = (() => {
   "use strict";
   var lastId = 0;

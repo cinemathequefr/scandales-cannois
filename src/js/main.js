@@ -1,23 +1,16 @@
 import Viewer from "./viewer.js";
-
+import timeline from "./timeline.js";
 
 $(function () {
   drop($("svg.title path"), 0, 100, false, "bounceInUp");
   drop($(".thumb"), 2000, 25, true, "bounceInDown");
 
   var v = new Viewer({
+    width: "50vw"
   });
 
   $(".thumb").on("click", function() {
     v.open($(this));
-  });
-
-  v.on("viewer.open", (e) => {
-    console.log("open");
-  });
-
-  v.on("viewer.close", (e) => {
-    console.log("close");
   });
 
 });

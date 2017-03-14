@@ -1,0 +1,42 @@
+/* Extends: https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css */
+
+.mCSB_scrollTools .mCSB_dragger {
+  cursor: w-resize;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  border-radius: 0;
+}
+
+.mCSB_horizontal.mCustomScrollBox > .mCSB_scrollTools {
+  height: 128px;
+  left: 0; right: 0; bottom: 0;
+}
+
+.mCSB_horizontal > .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  height: 128px;
+  margin: 1px auto;
+}
+
+.mCSB_scrollTools .mCSB_draggerRail {
+  display: none;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mCSB_draggerContainer {
+  /*background-color: #69f;*/
+  border-top: solid 1px #ccc;
+}
+
+
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+  background:rgba(255, 255, 255, 0.3);
+}
+
+.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+  background:rgba(255, 255, 255, 0.4);
+}
