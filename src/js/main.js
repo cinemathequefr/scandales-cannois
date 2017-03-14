@@ -2,10 +2,10 @@ import Viewer from "./viewer.js";
 
 
 $(function () {
+  drop($("svg.title path"), 0, 100, false, "bounceInUp");
+  drop($(".thumb"), 2000, 25, true, "bounceInDown");
 
   var v = new Viewer({
-    duration: 500,
-    easing: "easeInOutQuad"
   });
 
   $(".thumb").on("click", function() {
@@ -20,45 +20,7 @@ $(function () {
     console.log("close");
   });
 
-
-  // console.log(v);
-  // v.open();
-
 });
-
-
-
-
-
-/*
-$(function() {
-  var v = new Viewer({
-    top: "24px",
-    left: "24px",
-    width: "50vw",
-    height: "calc(100vh - 64px)"
-  });
-
-  drop($("svg.title path"), 0, 100, false, "bounceInUp");
-  drop($(".thumb"), 2000, 25, true, "bounceInDown");
-
-  v.on("viewer.open", () => {
-    v.$content.append("<p>Hullo there!</p>");
-  });
-
-  $(".thumb").on("click", function() {
-    if (v.isOpen()) {
-      v.close();
-      v.one("viewer.close", () => {
-        v.open($(this));
-      }); // NOTE: The arrow function preserves `this`.
-    } else {
-      v.open($(this));
-    }
-  });
-});
-*/
-
 
 
 function drop($elems, delay, duration, shuffle, animationType) {

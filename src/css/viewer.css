@@ -1,8 +1,14 @@
 .viewer {
-  position: fixed; display: block; overflow: hidden;
+  position: fixed; display: none; overflow: hidden;
   width: 0; height: 0;
   background-color: #333;
-  border: none;
+  box-sizing: border-box;
+}
+
+.viewer-protect {
+  position: fixed; display: none; overflow: hidden;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: transparent;
   box-sizing: border-box;
 }
 
@@ -10,8 +16,9 @@ body.viewer-isopen {
   overflow: hidden;
 }
 
+
 .viewer-close:before {
-  display: block; position: fixed;
+  display: block; position: absolute;
   top: 4px; /*right: 16px;*/ right: 4px; line-height: 0.5;
   color: #f33;
   font-size: 5rem; font-weight: 400;
