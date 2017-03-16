@@ -6,17 +6,16 @@ body {
   background-color: #333;
 }
 
-
-.container {
-  position: absolute;  overflow: hidden;
-  width: 100vw; height: 100vh;
+.content-wrapper {
+  position: fixed; overflow: hidden;
+  top: 0; right: 0; bottom: 0; left: 0;
 }
 
-.content {
-  position: relative;
-  width: 300vw; height: 100vh;
+.content-scroller {
+  position: absolute;
+  height: 100%; width: 2500px; /* Note: width must (apparently) be set */
+  cursor: move;
 }
-
 
 a#logocf {
   position: fixed;

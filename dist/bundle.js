@@ -11939,8 +11939,14 @@ function run (data) {
 
 
 
-  console.log(data);
+  // console.log(data);
 
+  var myScroll = new IScroll(".content-wrapper", {
+    scrollY: false,
+    scrollX: true,
+    scrollbars: false,
+    mouseWheel: true,
+  });
 
 
 
