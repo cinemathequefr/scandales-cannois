@@ -1,7 +1,36 @@
 import Viewer from "./viewer.js";
 import timeline from "./timeline.js";
+import moment from "moment";
+
+
 
 $(function () {
+  $.getJSON("data/data.json").then(run);
+});
+
+
+
+function run (data) {
+
+  data = _(data)
+  .sortBy("date")
+  .map(
+    item => _(item)
+      .assign({
+        date: moment(item.date)
+      })
+      .value()
+  )
+  .value();
+
+
+
+  console.log(data);
+
+
+
+
+
   drop($("svg.title path"), 0, 100, false, "bounceInUp");
   drop($(".thumb"), 2000, 25, true, "bounceInDown");
 
@@ -12,8 +41,10 @@ $(function () {
   $(".thumb").on("click", function() {
     v.open($(this));
   });
+}
 
-});
+
+
 
 
 function drop($elems, delay, duration, shuffle, animationType) {

@@ -1,7 +1,7 @@
 import nodeResolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import buble from "rollup-plugin-buble";
-// import uglify from "rollup-plugin-uglify";
+import uglify from "rollup-plugin-uglify";
 
 export default {
   entry: "src/js/main.js",
@@ -10,8 +10,7 @@ export default {
     nodeResolve({ jsnext: true }),
     commonjs(),
     buble()
-    //,
-    //uglify()
+    // , uglify()
   ],
   format: "iife",
   sourceMap: true
