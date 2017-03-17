@@ -1,6 +1,10 @@
 import Viewer from "./viewer.js";
 import timeline from "./timeline.js";
 import moment from "moment";
+import scale from './scale.js';
+
+_.templateSettings.interpolate = /{{([\s\S]+?)}}/g; // Set mustache-style interpolate delimiters
+moment.locale("fr", { monthsShort: "jan_fév_mar_avr_mai_juin_juil_aoû_sep_oct_nov_déc".split("_"), weekdaysShort: "Dim_Lun_Mar_Mer_Jeu_Ven_Sam".split("_") });
 
 
 
@@ -11,6 +15,10 @@ $(function () {
 
 
 function run (data) {
+
+
+  // scale.init(data);
+  // console.log(scale.data());
 
   data = _(data)
   .sortBy("date")
@@ -23,9 +31,24 @@ function run (data) {
   )
   .value();
 
+  _(data)
+  .forEach(item => {
 
+    $("<div class='thumb-cont'></div>")
+    .css({
+      top: ([65, 50, 35][item.y - 1] - _.random(0, 5, true)) + "vh",
+      left: (item.x) + "px",
+      backgroundImage: "url(img/" + item.id + ".jpg)"
+    })
+    .data("item", item)
+    .appendTo($(".content-scroller"))
+    .append("<div class='thumb'></div>")
+    .children(".thumb")
+    .html("<span>" + item.date.format("D MMM YYYY") + "</span>");
 
-  // console.log(data);
+    // console.log(c);
+  });
+
 
   var myScroll = new IScroll(".content-wrapper", {
     scrollY: false,
@@ -34,18 +57,21 @@ function run (data) {
     mouseWheel: true,
   });
 
-
-
-
   drop($("svg.title path"), 0, 100, false, "bounceInUp");
-  drop($(".thumb"), 2000, 25, true, "bounceInDown");
+  drop($(".thumb-cont"), 200, 10, true, "bounceInDown");
 
   var v = new Viewer({
     width: "50vw"
   });
 
-  $(".thumb").on("click", function() {
+  $(".thumb-cont").on("click", function() {
     v.open($(this));
+  });
+
+  v.on("viewer.open", () => {
+    var d = v.$source.data("item");
+    v.$content.html("<h1>" + d.date.format("D MMM YYYY") + "<br>" + d.title + "</h1>");
+
   });
 }
 

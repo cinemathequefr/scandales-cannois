@@ -4,6 +4,7 @@ body {
   position: relative; overflow:hidden;
   height: 100vh;
   background-color: #333;
+  font-family: "Source Sans Pro";
 }
 
 .content-wrapper {
@@ -13,8 +14,10 @@ body {
 
 .content-scroller {
   position: absolute;
-  height: 100%; width: 2500px; /* Note: width must (apparently) be set */
+  height: 100%; width: 9000px; /* Note: width must (apparently) be set */
   cursor: move;
+  padding: 0 128px;
+  box-sizing: content-box;
 }
 
 a#logocf {
@@ -35,9 +38,9 @@ a#logocf:hover {
 svg.title {
   position: fixed;
   top: 8px; left: 8px;
-  fill: #f33;
+  fill: #fc333c;
+  /*outline: solid 1px red;*/
 }
-
 
 svg.title path {
   -moz-animation-duration: 1s;
@@ -45,23 +48,40 @@ svg.title path {
   -moz-animation-iteration-count: 1;
 }
 
-.thumb {
+.thumb-cont {
   position: absolute;
-  width: 120px; height: 80px;  /* border: solid 1px red; */
-  /*border: solid 4px #fff; border-bottom-width: 24px;*/
-  background-color: #eee;
-  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
+  width: 240px; height: 200px;
+  box-shadow: -8px -8px 12px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  /*box-sizing: border-box;*/
+  border: solid 11px #ffffee; border-bottom-width: 48px;
 }
 
-.thumb.sizem { width: 180px; height: 120px; }
-.thumb.sizel { width: 216px; height: 144px; }
+.thumb-cont.sizem { width: 180px; height: 120px; }
+.thumb-cont.sizel { width: 216px; height: 144px; }
 
-.thumb.tit {
-  background-image: url(../../img/tit.jpg); background-position: 50% 50%; background-size: cover;
+.thumb {
+  background-color: #fc333c; overflow: hidden;
+  text-align: center; line-height: 200px; color: #111;
+  font-size: 1.25rem; font-weight: 600; font-family: "Permanent Marker";
+/*  border: solid 11px #ffffee; border-bottom-width: 48px;*/
+}
+
+.thumb > span {
+  display: block;
+  -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
+  transform: rotate(-8deg);
 }
 
 .viewer {
   background-color: #fff;
   opacity: 0.95;
+}
+
+.viewer h1 {
+  font-family: "Permanent Marker";
+}
+
+.viewer-content {
+  padding: 36px;
 }

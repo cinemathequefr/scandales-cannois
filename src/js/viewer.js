@@ -89,6 +89,11 @@ Viewer.prototype = (function () {
   }
 
 
+  function $source () {
+    return self.$source;
+  }
+
+
   function close () {
     if (this._isOpen === false || this.isViewerAnimationRunning === true) {
       return;
@@ -124,6 +129,8 @@ Viewer.prototype = (function () {
 
   function open ($source) {
     self.$source = $source;
+
+    console.log(coordinates(self.$source));
 
     if (self._isOpen === true || self.isViewerAnimationRunning === true) {
       if (self.options.autoClose === false) {
@@ -219,8 +226,8 @@ Viewer.prototype = (function () {
       return {
         left: $el.offset().left - $("html").scrollLeft() + "px",
         top: $el.offset().top - $("html").scrollTop() + "px",
-        width: $el.width() + "px",
-        height: $el.height() + "px"
+        width: $el.outerWidth(false) + "px",
+        height: $el.outerHeight(false) + "px"
       };
     } else {
       return {
@@ -236,7 +243,8 @@ Viewer.prototype = (function () {
   return {
     _initSelf: _initSelf,
     $content: $content,
-    $el :$el,
+    $el: $el,
+    $source: $source,
     close: close,
     isOpen: isOpen,
     off: off,

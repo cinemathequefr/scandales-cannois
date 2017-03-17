@@ -4804,6 +4804,11 @@ Viewer.prototype = (function () {
   }
 
 
+  function $source () {
+    return self.$source;
+  }
+
+
   function close () {
     if (this._isOpen === false || this.isViewerAnimationRunning === true) {
       return;
@@ -4839,6 +4844,8 @@ Viewer.prototype = (function () {
 
   function open ($source) {
     self.$source = $source;
+
+    console.log(coordinates(self.$source));
 
     if (self._isOpen === true || self.isViewerAnimationRunning === true) {
       if (self.options.autoClose === false) {
@@ -4934,8 +4941,8 @@ Viewer.prototype = (function () {
       return {
         left: $el.offset().left - $("html").scrollLeft() + "px",
         top: $el.offset().top - $("html").scrollTop() + "px",
-        width: $el.width() + "px",
-        height: $el.height() + "px"
+        width: $el.outerWidth(false) + "px",
+        height: $el.outerHeight(false) + "px"
       };
     } else {
       return {
@@ -4951,7 +4958,8 @@ Viewer.prototype = (function () {
   return {
     _initSelf: _initSelf,
     $content: $content,
-    $el :$el,
+    $el: $el,
+    $source: $source,
     close: close,
     isOpen: isOpen,
     off: off,
@@ -11918,6 +11926,11 @@ hooks.relativeTimeThreshold = getSetRelativeTimeThreshold;
 hooks.calendarFormat        = getCalendarFormat;
 hooks.prototype             = proto;
 
+_.templateSettings.interpolate = /{{([\s\S]+?)}}/g; // Set mustache-style interpolate delimiters
+hooks.locale("fr", { monthsShort: "jan_fév_mar_avr_mai_juin_juil_aoû_sep_oct_nov_déc".split("_"), weekdaysShort: "Dim_Lun_Mar_Mer_Jeu_Ven_Sam".split("_") });
+
+
+
 $(function () {
   $.getJSON("data/data.json").then(run);
 });
@@ -11925,6 +11938,10 @@ $(function () {
 
 
 function run (data) {
+
+
+  // scale.init(data);
+  // console.log(scale.data());
 
   data = _(data)
   .sortBy("date")
@@ -11937,9 +11954,24 @@ function run (data) {
   )
   .value();
 
+  _(data)
+  .forEach(function (item) {
 
+    $("<div class='thumb-cont'></div>")
+    .css({
+      top: ([65, 50, 35][item.y - 1] - _.random(0, 5, true)) + "vh",
+      left: (item.x) + "px",
+      backgroundImage: "url(img/" + item.id + ".jpg)"
+    })
+    .data("item", item)
+    .appendTo($(".content-scroller"))
+    .append("<div class='thumb'></div>")
+    .children(".thumb")
+    .html("<span>" + item.date.format("D MMM YYYY") + "</span>");
 
-  // console.log(data);
+    // console.log(c);
+  });
+
 
   var myScroll = new IScroll(".content-wrapper", {
     scrollY: false,
@@ -11948,18 +11980,21 @@ function run (data) {
     mouseWheel: true,
   });
 
-
-
-
   drop($("svg.title path"), 0, 100, false, "bounceInUp");
-  drop($(".thumb"), 2000, 25, true, "bounceInDown");
+  drop($(".thumb-cont"), 200, 10, true, "bounceInDown");
 
   var v = new Viewer({
     width: "50vw"
   });
 
-  $(".thumb").on("click", function() {
+  $(".thumb-cont").on("click", function() {
     v.open($(this));
+  });
+
+  v.on("viewer.open", function () {
+    var d = v.$source.data("item");
+    v.$content.html("<h1>" + d.date.format("D MMM YYYY") + "<br>" + d.title + "</h1>");
+
   });
 }
 
