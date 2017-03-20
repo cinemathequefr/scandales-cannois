@@ -8,7 +8,6 @@ import * as velocity from "velocity-animate";
 
 
 // TODO: add perfectScrollbar, allow to set amargin around the viewer
-// TODO: when closing viewer with the escape key, determine which instance (= the last open - we must keep track of it!)
 const Viewer = (() => {
   "use strict";
   var lastId = 0;
@@ -64,6 +63,8 @@ const Viewer = (() => {
       .appendTo(this.$el)
       .hide();
 
+    this._initSelf();
+
   };
 })();
 
@@ -72,27 +73,29 @@ Viewer.prototype = (function () {
   "use strict";
   var self;
 
+
+  function _initSelf () { // This method is to be called once, by the constructor, to give the value of `this` to the closure `self`
+    self = this;
+  }
+
+
   function $content () {
-    var self = this;
     return self.$el.children(self.options.className + "-content");
   }
 
 
   function $el () {
-    var self = this;
     return self.$el;
   }
 
 
   function $source () {
-    var self = this;
     return self.$source;
   }
 
 
   function close () {
-    var self = this;
-    if (self._isOpen === false || self.isViewerAnimationRunning === true) {
+    if (this._isOpen === false || this.isViewerAnimationRunning === true) {
       return;
     }
 
@@ -101,6 +104,8 @@ Viewer.prototype = (function () {
     if (self.options.protectBackground === true) {
       self.$protect.hide();
     }
+
+    $("body").removeClass(self.options.className + "-isopen");
 
     self.$close.hide();
 
@@ -118,15 +123,17 @@ Viewer.prototype = (function () {
 
 
   function isOpen() {
-    var self = this;
     return !!self._isOpen;
   }
 
 
   function open ($source) {
-    var self = this;
+
+    console.log(self);
+
 
     self.$source = $source;
+
 
     if (self._isOpen === true || self.isViewerAnimationRunning === true) {
       if (self.options.autoClose === false) {
@@ -179,6 +186,7 @@ Viewer.prototype = (function () {
 
 
   function onOpen (self) {
+    $("body").addClass(self.className + "-isopen");
 
     self.$close
     .show()
@@ -236,6 +244,7 @@ Viewer.prototype = (function () {
 
 
   return {
+    _initSelf: _initSelf,
     $content: $content,
     $el: $el,
     $source: $source,

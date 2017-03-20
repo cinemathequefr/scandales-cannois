@@ -55,6 +55,7 @@ function run (data) {
     scrollX: true,
     scrollbars: false,
     mouseWheel: true,
+    tap: true
   });
 
   drop($("svg.title path"), 0, 100, false, "bounceInUp");
@@ -64,13 +65,22 @@ function run (data) {
     width: "50vw"
   });
 
-  $(".thumb-cont").on("click", function() {
+  var w = new Viewer({
+    width: "100vw"
+  });
+
+  $(".thumb-cont").on("tap", function() { // https://github.com/cubiq/iscroll#optionstap
     v.open($(this));
   });
 
   v.on("viewer.open", () => {
     var d = v.$source.data("item");
-    v.$content.html("<h1>" + d.date.format("D MMM YYYY") + "<br>" + d.title + "</h1>");
+    v.$content.html("<h1>" + d.date.format("D MMM YYYY") + "<br>" + d.title + "</h1><div class='text'>" + d.text + "</div><img src='img/" + d.id + "-1.jpg'>");
+    var $thumb = v.$content.find("img");
+    $thumb.on("click", () => { w.open($thumb); });
+
+
+
 
   });
 }

@@ -4778,8 +4778,6 @@ var Viewer = (function () {
       .appendTo(this.$el)
       .hide();
 
-    this._initSelf();
-
   };
 })();
 
@@ -4788,29 +4786,27 @@ Viewer.prototype = (function () {
   "use strict";
   var self;
 
-
-  function _initSelf () { // This method is to be called once, by the constructor, to give the value of `this` to the closure `self`
-    self = this;
-  }
-
-
   function $content () {
+    var self = this;
     return self.$el.children(self.options.className + "-content");
   }
 
 
   function $el () {
+    var self = this;
     return self.$el;
   }
 
 
   function $source () {
+    var self = this;
     return self.$source;
   }
 
 
   function close () {
-    if (this._isOpen === false || this.isViewerAnimationRunning === true) {
+    var self = this;
+    if (self._isOpen === false || self.isViewerAnimationRunning === true) {
       return;
     }
 
@@ -4819,8 +4815,6 @@ Viewer.prototype = (function () {
     if (self.options.protectBackground === true) {
       self.$protect.hide();
     }
-
-    $("body").removeClass(self.options.className + "-isopen");
 
     self.$close.hide();
 
@@ -4838,14 +4832,15 @@ Viewer.prototype = (function () {
 
 
   function isOpen() {
+    var self = this;
     return !!self._isOpen;
   }
 
 
   function open ($source) {
-    self.$source = $source;
+    var self = this;
 
-    console.log(coordinates(self.$source));
+    self.$source = $source;
 
     if (self._isOpen === true || self.isViewerAnimationRunning === true) {
       if (self.options.autoClose === false) {
@@ -4898,7 +4893,6 @@ Viewer.prototype = (function () {
 
 
   function onOpen (self) {
-    $("body").addClass(self.className + "-isopen");
 
     self.$close
     .show()
@@ -4956,7 +4950,6 @@ Viewer.prototype = (function () {
 
 
   return {
-    _initSelf: _initSelf,
     $content: $content,
     $el: $el,
     $source: $source,
@@ -11978,6 +11971,7 @@ function run (data) {
     scrollX: true,
     scrollbars: false,
     mouseWheel: true,
+    tap: true
   });
 
   drop($("svg.title path"), 0, 100, false, "bounceInUp");
@@ -11987,13 +11981,22 @@ function run (data) {
     width: "50vw"
   });
 
-  $(".thumb-cont").on("click", function() {
+  var w = new Viewer({
+    width: "100vw"
+  });
+
+  $(".thumb-cont").on("tap", function() { // https://github.com/cubiq/iscroll#optionstap
     v.open($(this));
   });
 
   v.on("viewer.open", function () {
     var d = v.$source.data("item");
-    v.$content.html("<h1>" + d.date.format("D MMM YYYY") + "<br>" + d.title + "</h1>");
+    v.$content.html("<h1>" + d.date.format("D MMM YYYY") + "<br>" + d.title + "</h1><div class='text'>" + d.text + "</div><img src='img/" + d.id + "-1.jpg'>");
+    var $thumb = v.$content.find("img");
+    $thumb.on("click", function () { w.open($thumb); });
+
+
+
 
   });
 }
