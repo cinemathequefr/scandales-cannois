@@ -78,11 +78,8 @@ function run (data) {
     v.$content.html("<h1>" + d.date.format("D MMM YYYY") + "<br>" + d.title + "</h1><div class='text'>" + d.text + "</div><img src='img/" + d.id + "-1.jpg'>");
     var $thumb = v.$content.find("img");
     $thumb.on("click", () => { w.open($thumb); });
-
-
-
-
   });
+
 }
 
 

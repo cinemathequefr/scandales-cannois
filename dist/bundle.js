@@ -4723,63 +4723,63 @@ var velocity = createCommonjsModule(function (module) {
  * Copyright (c) 2013 "Cowboy" Ben Alman; Licensed MIT */
 (function(n){var u=n({});n.subscribe=function(){u.on.apply(u,arguments);},n.unsubscribe=function(){u.off.apply(u,arguments);},n.publish=function(){u.trigger.apply(u,arguments);};})(jQuery);
 
-var Viewer = (function () {
-  "use strict";
-  var lastId = 0;
+// TODO: add perfectScrollbar, allow to set amargin around the viewer
+var Viewer = function (options) {
+  this.options = _({}).assign({
+    $parent: $("body"),
+    autoClose: true, // If `open` is called when the viewer is open, the viewer is closed first (if set to false, `open` does nothing)
+    className: "viewer",
+    duration: 350,
+    easing: "easeInOutCubic",
+    emptyOnClose: true,
+    protectBackground: false, // Add a transparent block below the viewer to prevent interactions with the background (useful when the viewer is not fullsize)
+    top: "0px",
+    left: "0px",
+    width: "100vw",
+    height: "100vh"
+  }, options).value();
 
-  return function (options) {
-    this.options = _({}).assign({
-      $parent: $("body"),
-      autoClose: true, // If `open` is called when the viewer is open, the viewer is closed first (if set to false, `open` does nothing)
-      className: "viewer",
-      duration: 350,
-      easing: "easeInOutCubic",
-      emptyOnClose: true,
-      protectBackground: false, // Add a transparent block below the viewer to prevent interactions with the background (useful when the viewer is not fullsize)
-      top: "0px",
-      left: "0px",
-      width: "100vw",
-      height: "100vh"
-    }, options).value();
-
-    this.targetCoordinates = {
-      top: this.options.top,
-      left: this.options.left,
-      width: this.options.width,
-      height: this.options.height
-    };
-
-    this._isOpen = false;
-
-    this.isViewerAnimationRunning = false;
-
-    this.id = ++lastId;
-
-    this.$el = $("<div></div>")
-      .addClass(this.options.className)
-      .attr({
-        id: this.options.className + "-" + this.id
-      })
-      .appendTo(this.options.$parent);
-
-    if (this.options.protectBackground === true) {
-      this.$protect = $("<div></div>")
-      .addClass(this.options.className + "-protect")
-      .addClass(this.options.className + "-protect-" + this.id)
-      .insertBefore(this.$el);
-    }
-
-    this.$content = $("<div></div>")
-      .addClass(this.options.className + "-content")
-      .appendTo(this.$el);
-
-    this.$close = $("<div></div>")
-      .addClass(this.options.className + "-close")
-      .appendTo(this.$el)
-      .hide();
-
+  this.targetCoordinates = {
+    top: this.options.top,
+    left: this.options.left,
+    width: this.options.width,
+    height: this.options.height
   };
-})();
+
+  this._isOpen = false;
+  this.isViewerAnimationRunning = false;
+
+  this.id = ++Viewer.lastId;
+
+  this.$el = $("<div></div>")
+    .addClass(this.options.className)
+    .attr({
+      id: this.options.className + "-" + this.id
+    })
+    .appendTo(this.options.$parent);
+
+  if (this.options.protectBackground === true) {
+    this.$protect = $("<div></div>")
+    .addClass(this.options.className + "-protect")
+    .addClass(this.options.className + "-protect-" + this.id)
+    .insertBefore(this.$el);
+  }
+
+  this.$content = $("<div></div>")
+    .addClass(this.options.className + "-content")
+    .appendTo(this.$el);
+
+  this.$close = $("<div></div>")
+    .addClass(this.options.className + "-close")
+    .appendTo(this.$el)
+    .hide();
+
+};
+
+
+Viewer.lastId = 0;
+Viewer.instancesOpen = [];
+Viewer.isCloseKeyEventAttached = false;
 
 
 Viewer.prototype = (function () {
@@ -4787,86 +4787,113 @@ Viewer.prototype = (function () {
   var self;
 
   function $content () {
-    var self = this;
-    return self.$el.children(self.options.className + "-content");
+    return this.$el.children(self.options.className + "-content");
   }
 
 
   function $el () {
-    var self = this;
-    return self.$el;
+    return this.$el;
   }
 
 
   function $source () {
-    var self = this;
-    return self.$source;
+    return this.$source;
   }
 
 
   function close () {
-    var self = this;
-    if (self._isOpen === false || self.isViewerAnimationRunning === true) {
+    var this$1 = this;
+
+    if (this._isOpen === false || this.isViewerAnimationRunning === true) {
       return;
     }
 
-    self.isViewerAnimationRunning = true;
+    this.isViewerAnimationRunning = true;
 
-    if (self.options.protectBackground === true) {
-      self.$protect.hide();
+    if (this.options.protectBackground === true) {
+      this.$protect.hide();
     }
 
-    self.$close.hide();
+    this.$close.hide();
 
-    if (!!self.options.emptyOnClose) {
-      self.$content.empty();
+    if (!!this.options.emptyOnClose) {
+      this.$content.empty();
     }
 
-    self.$el
-    .velocity(coordinates(self.$prevSource), {
-      duration: self.options.duration,
-      easing: self.options.easing,
-      complete: function () { onClose(self); }
+    this.$el
+    .velocity(coordinates(this.$prevSource), {
+      duration: this.options.duration,
+      easing: this.options.easing,
+      complete: function () {
+        this$1.$el.hide();
+        Viewer.instancesOpen.pop();
+
+        if (Viewer.instancesOpen.length === 0) {
+          Viewer.isCloseKeyEventAttached = false;
+        } else {
+          attachCloseKeyEvent();
+        }
+
+        this$1._isOpen = false;
+        this$1.isViewerAnimationRunning = false;
+        $.publish(this$1.options.className + ".close");
+      }
     });
   }
 
 
   function isOpen() {
-    var self = this;
-    return !!self._isOpen;
+    return !!this._isOpen;
   }
 
 
   function open ($source) {
-    var self = this;
+    var this$1 = this;
 
-    self.$source = $source;
+    this.$source = $source;
 
-    if (self._isOpen === true || self.isViewerAnimationRunning === true) {
-      if (self.options.autoClose === false) {
+    if (this._isOpen === true || this.isViewerAnimationRunning === true) {
+      if (this.options.autoClose === false) {
         return;
       } else {
-        self.close();
-        self.one("viewer.close", function () {
-          self.open($source);
+        this.close();
+        this.one("viewer.close", function () {
+          this$1.open($source);
         });
         return;
       }
     }
 
-    self.isViewerAnimationRunning = true;
+    this.isViewerAnimationRunning = true;
 
-    if (self.options.protectBackground === true) {
-      self.$protect.show();
+    if (this.options.protectBackground === true) {
+      this.$protect.show();
     }
 
-    self.$el
+    this.$el
     .show()
-    .css(coordinates(self.$source))
-    .velocity(self.targetCoordinates, {
-      duration: self.options.duration,
-      easing: self.options.easing,
-      complete: function () { onOpen(self); }
+    .css(coordinates(this.$source))
+    .velocity(this.targetCoordinates, {
+      duration: this.options.duration,
+      easing: this.options.easing,
+      complete: function () {
+        this$1.$close
+        .show()
+        .one("click", function () {
+          this$1.close();
+        });
+
+        Viewer.instancesOpen.push(this$1);
+
+        if (Viewer.isCloseKeyEventAttached === false) {
+          attachCloseKeyEvent();
+        }
+
+        this$1._isOpen = true;
+        this$1.isViewerAnimationRunning = false;
+        this$1.$prevSource = this$1.$source; // NOTE: this enables to close a viewer while it has been requested to open on another source
+        $.publish(this$1.options.className + ".open");
+      }
     });
   }
 
@@ -4892,44 +4919,6 @@ Viewer.prototype = (function () {
   // Private functions
 
 
-  function onOpen (self) {
-
-    self.$close
-    .show()
-    .one("click", function () {
-      self.close();
-    });
-
-    $(document).on("keydown", function (e) {
-      if (e.which === 27) {
-        $(document).off("keydown");
-        self.$close.addClass("on");
-      }
-    });
-
-    $(document).on("keyup", function (e) { // Close with Escape key
-      if (e.which === 27) {
-        $(document).off("keyup");
-        self.$close.removeClass("on");
-        self.close();
-      }
-    });
-
-    self._isOpen = true;
-    self.isViewerAnimationRunning = false;
-    self.$prevSource = self.$source; // NOTE: this enables to close a viewer while it has been requested to open on another source
-    $.publish(self.options.className + ".open");
-  }
-
-
-  function onClose (self) {
-    self.$el.hide();
-    self._isOpen = false;
-    self.isViewerAnimationRunning = false;
-    $.publish(self.options.className + ".close");
-  }
-
-
   function coordinates ($el) {
     if (!!$el) {
       return {
@@ -4946,6 +4935,27 @@ Viewer.prototype = (function () {
         height: "0px"
       };
     }
+  }
+
+ // Closing a viewer with the escape key requires some extra work because we want to close only the latest viewer opened
+  function attachCloseKeyEvent () {
+    $(document).on("keydown", function (e) {
+      if (e.which === 27) {
+        $(document).off("keydown");
+        _.last(Viewer.instancesOpen).$close.addClass("on");
+      }
+    });
+
+    $(document).on("keyup", function (e) {
+      if (e.which === 27) {
+        $(document).off("keyup");
+        var instance = _.last(Viewer.instancesOpen);
+        instance.$close.removeClass("on");
+        instance.close();
+      }
+    });
+
+    Viewer.isCloseKeyEventAttached = true;
   }
 
 
@@ -11994,11 +12004,8 @@ function run (data) {
     v.$content.html("<h1>" + d.date.format("D MMM YYYY") + "<br>" + d.title + "</h1><div class='text'>" + d.text + "</div><img src='img/" + d.id + "-1.jpg'>");
     var $thumb = v.$content.find("img");
     $thumb.on("click", function () { w.open($thumb); });
-
-
-
-
   });
+
 }
 
 
