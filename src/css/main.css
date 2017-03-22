@@ -63,14 +63,31 @@ svg.title path {
 .thumb-cont.sizel { width: 216px; height: 144px; }
 
 .thumb {
-  background-color: #fc333c; overflow: hidden;
-  text-align: center; line-height: 200px; color: #111;
-  font-size: 1.25rem; font-weight: 600; font-family: "Permanent Marker";
-/*  border: solid 11px #ffffee; border-bottom-width: 48px;*/
+  display: block; overflow: hidden;
+  width: 240px; height: 200px;
+  background-color: #fc333c;
+  background-position: 50% 50%; background-size: cover;
 }
 
-.thumb > span {
+.thumb > div {
+  display: block; position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: rgba(252, 51, 60, 0.5);
+  text-align: center; line-height: 200px;
+  font-size: 1.25rem; font-weight: 600; font-family: "Permanent Marker";
+  mix-blend-mode: lighten;
+  transition: 0.25s;
+}
+
+.thumb > div:hover {
+  background-color: rgba(252, 51, 60, 0);
+}
+
+
+.thumb > div > span {
   display: block;
+  /*color: #111;*/
+  color: #111;
   -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
   transform: rotate(-8deg);
 }

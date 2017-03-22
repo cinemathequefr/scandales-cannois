@@ -4,9 +4,11 @@
  * Copyright (c) 2013 "Cowboy" Ben Alman; Licensed MIT */
 (function(n){var u=n({});n.subscribe=function(){u.on.apply(u,arguments);},n.unsubscribe=function(){u.off.apply(u,arguments);},n.publish=function(){u.trigger.apply(u,arguments);};})(jQuery);
 
-import * as velocity from "velocity-animate"; 
+import velocity from "velocity-animate";
+import ps from "perfect-scrollbar/jquery";
 
-// TODO: add perfectScrollbar, allow to set amargin around the viewer
+
+// TODO: add perfectScrollbar, allow to set a margin around the viewer
 const Viewer = function (options) {
   this.options = _({}).assign({
     $parent: $("body"),
@@ -16,6 +18,7 @@ const Viewer = function (options) {
     easing: "easeInOutCubic",
     emptyOnClose: true,
     protectBackground: false, // Add a transparent block below the viewer to prevent interactions with the background (useful when the viewer is not fullsize)
+    enableScrollbar: true,
     top: "0px",
     left: "0px",
     width: "100vw",
@@ -40,6 +43,15 @@ const Viewer = function (options) {
       id: this.options.className + "-" + this.id
     })
     .appendTo(this.options.$parent);
+
+
+  if (this.options.enableScrollbar === true) {
+    this.$el.perfectScrollbar({
+      suppressScrollX: true,
+      wheelSpeed: 3
+    });
+  }
+
 
   if (this.options.protectBackground === true) {
     this.$protect = $("<div></div>")
@@ -161,6 +173,10 @@ Viewer.prototype = (function () {
         .one("click", () => {
           this.close();
         });
+
+        if (this.options.enableScrollbar === true) {
+          this.$el.scrollTop(0).perfectScrollbar("update");
+        }
 
         Viewer.instancesOpen.push(this);
 

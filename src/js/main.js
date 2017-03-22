@@ -42,9 +42,19 @@ function run (data) {
     })
     .data("item", item)
     .appendTo($(".content-scroller"))
-    .append("<div class='thumb'></div>")
-    .children(".thumb")
-    .html("<span>" + item.date.format("D MMM YYYY") + "</span>");
+    // .append("<div class='thumb' style='background-image:url(img/240x200/" + item.id + "-1.jpg);'></div>")
+    // .children(".thumb")
+    // .html("<span>" + item.date.format("D MMM YYYY") + "</span>");
+    .html([
+      "<div class='thumb' style='background-image:url(img/240x200/" + item.id + "-1.jpg);'>",
+      "<div>",
+      "<span>" + item.date.format("D MMM YYYY") + "</span>",
+      "</div>",
+      "</div>"
+    ].join("")
+    );
+
+
 
     // console.log(c);
   });
@@ -66,7 +76,8 @@ function run (data) {
   });
 
   var w = new Viewer({
-    width: "100vw"
+    width: "100vw",
+    enableScrollbar: false
   });
 
   $(".thumb-cont").on("tap", function() { // https://github.com/cubiq/iscroll#optionstap
