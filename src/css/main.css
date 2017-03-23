@@ -93,6 +93,7 @@ svg.title path {
 
 .viewer h1 {
   font-family: "Permanent Marker";
+  margin-bottom: 36px;
 }
 
 .viewer-content {
@@ -101,17 +102,31 @@ svg.title path {
   box-sizing: border-box;
 }
 
-.text {
+.viewer-content > .content {
+  overflow: hidden;
+  width: 700px;
+  margin: 0 auto;
+}
+
+
+.viewer-content > .content > .text {
   position: relative;
   font-family: "Lora";
   line-height: 150%;
 }
 
-.text img {
+.viewer-content > .content > img {
   display: block;
+  width: 100%;
+  margin: 36px 0;
 }
 
 #viewer-2 {
   background-color: #333;
 }
 
+.viewer-content img {
+  display: block;
+  max-width: 100%px;
+  cursor: pointer;
+}

@@ -1,6 +1,6 @@
+import moment from "moment";
 import Viewer from "./viewer.js";
 import timeline from "./timeline.js";
-import moment from "moment";
 import scale from './scale.js';
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g; // Set mustache-style interpolate delimiters
@@ -21,13 +21,7 @@ $(function () {
 });
 
 
-
 function run (data) {
-
-
-  // scale.init(data);
-  // console.log(scale.data());
-
   data = _(data)
   .sortBy("date")
   .map(
@@ -41,7 +35,6 @@ function run (data) {
 
   _(data)
   .forEach(item => {
-
     $("<div class='thumb-cont'></div>")
     .css({
       top: ([65, 50, 35][item.y - 1] - _.random(0, 5, true)) + "vh",
@@ -51,18 +44,6 @@ function run (data) {
     .data("item", item)
     .appendTo($(".content-scroller"))
     .html(template.thumb(item));
-    // .html([
-    //   "<div class='thumb' style='background-image:url(img/240x200/" + item.id + "-1.jpg);'>",
-    //   "<div>",
-    //   "<span>" + item.date.format("D MMM YYYY") + "</span>",
-    //   "</div>",
-    //   "</div>"
-    // ].join("")
-    // );
-
-
-
-    // console.log(c);
   });
 
 
@@ -78,7 +59,8 @@ function run (data) {
   drop($(".thumb-cont"), 200, 10, true, "bounceInDown");
 
   var v = new Viewer({
-    width: "50vw"
+    // width: "50vw"
+    width: "100vw"
   });
 
   var w = new Viewer({
@@ -92,7 +74,7 @@ function run (data) {
 
   v.on("viewer.open", () => {
     var d = v.$source.data("item");
-    v.$content.html("<h1>" + d.date.format("D MMM YYYY") + "<br>" + d.title + "</h1><div class='text'>" + d.text + "</div><img src='img/" + d.id + "-1.jpg'>");
+    v.$content.html("<div class='content'><h1>" + d.date.format("D MMM YYYY") + "<br>" + d.title + "</h1><div class='text'>" + d.text + "</div><img src='img/" + d.id + "-1.jpg'></div>");
     var $thumb = v.$content.find("img");
     $thumb.on("click", () => { w.open($thumb); });
   });

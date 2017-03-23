@@ -23,8 +23,8 @@ body.viewer-isopen {
 
 
 .viewer-close:before {
-  display: block; position: absolute;
-  top: 4px; /*right: 16px;*/ right: 12px; line-height: 0.5;
+  display: block; /*position: absolute;*/ position: fixed;
+  top: 4px; right: 12px; line-height: 0.5;
   color: #f33;
   font-size: 5rem; font-weight: 400;
   content: "×";
