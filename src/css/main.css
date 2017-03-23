@@ -4,7 +4,7 @@ body {
   position: relative; overflow:hidden;
   height: 100vh;
   background-color: #333;
-  background-image: url("bg.jpg"); background-position: 50% 50%; background-size: cover;
+  background-image: url("img/bg.jpg"); background-position: 50% 50%; background-size: cover;
   font-family: "Source Sans Pro";
 
 }
@@ -69,25 +69,20 @@ svg.title path {
   background-position: 50% 50%; background-size: cover;
 }
 
-.thumb > div {
+.thumb-overlay {
   display: block; position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
-  background-color: rgba(252, 51, 60, 0.5);
-  text-align: center; line-height: 200px;
-  font-size: 1.25rem; font-weight: 600; font-family: "Permanent Marker";
+  background-color: rgba(252, 51, 60, 1);
   mix-blend-mode: lighten;
   transition: 0.25s;
 }
 
-.thumb > div:hover {
-  background-color: rgba(252, 51, 60, 0);
-}
-
-
-.thumb > div > span {
-  display: block;
-  /*color: #111;*/
+.thumb-date {
+  display: block; position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
   color: #111;
+  text-align: center; line-height: 200px;
+  font-size: 1.25rem; font-weight: 600; font-family: "Permanent Marker";
   -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
   transform: rotate(-8deg);
 }
@@ -101,7 +96,9 @@ svg.title path {
 }
 
 .viewer-content {
+  width: 100%;
   padding: 36px;
+  box-sizing: border-box;
 }
 
 .text {
@@ -117,3 +114,4 @@ svg.title path {
 #viewer-2 {
   background-color: #333;
 }
+

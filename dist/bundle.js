@@ -13475,6 +13475,14 @@ hooks.prototype             = proto;
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g; // Set mustache-style interpolate delimiters
 hooks.locale("fr", { monthsShort: "jan_fév_mar_avr_mai_juin_juil_aoû_sep_oct_nov_déc".split("_"), weekdaysShort: "Dim_Lun_Mar_Mer_Jeu_Ven_Sam".split("_") });
 
+var template = {
+  thumb: _.template([
+    "<div class='thumb' style='background-image:url(img/240x200/{{ id }}-1.jpg);'>",
+      "<div class='thumb-overlay'></div>",
+      "<div class='thumb-date'>{{ date.format('D MMM YYYY') }}</div>",
+    "</div>"
+  ].join(""))
+};
 
 
 $(function () {
@@ -13511,17 +13519,15 @@ function run (data) {
     })
     .data("item", item)
     .appendTo($(".content-scroller"))
-    // .append("<div class='thumb' style='background-image:url(img/240x200/" + item.id + "-1.jpg);'></div>")
-    // .children(".thumb")
-    // .html("<span>" + item.date.format("D MMM YYYY") + "</span>");
-    .html([
-      "<div class='thumb' style='background-image:url(img/240x200/" + item.id + "-1.jpg);'>",
-      "<div>",
-      "<span>" + item.date.format("D MMM YYYY") + "</span>",
-      "</div>",
-      "</div>"
-    ].join("")
-    );
+    .html(template.thumb(item));
+    // .html([
+    //   "<div class='thumb' style='background-image:url(img/240x200/" + item.id + "-1.jpg);'>",
+    //   "<div>",
+    //   "<span>" + item.date.format("D MMM YYYY") + "</span>",
+    //   "</div>",
+    //   "</div>"
+    // ].join("")
+    // );
 
 
 
