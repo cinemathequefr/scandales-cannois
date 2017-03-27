@@ -130,6 +130,7 @@ Viewer.prototype = (function () {
         this._isOpen = false;
         this.isViewerAnimationRunning = false;
         $.publish(this.options.className + ".close");
+
       }
     });
   }

@@ -10637,6 +10637,7 @@ Viewer.prototype = (function () {
         this$1._isOpen = false;
         this$1.isViewerAnimationRunning = false;
         $.publish(this$1.options.className + ".close");
+
       }
     });
   }
@@ -13472,14 +13473,152 @@ $(function () {
   });
 });
 
+// Hard dependency: jQuery, OpenSeadragon (currently loaded as a global -- no support for CommonJS modules)
+// Soft dependency: jQueryUI slider, (spotlight?)
+// console.log(OpenSeadragon);
+
+
+
+
+
+
+
+/**
+ * deepZoom
+ * Hard dependencies: jQuery, openseadragon
+ * Soft dependencies: jQueryUI slider, (spotlight?)
+ * 2016-10-18
+ */
+/*
+var deepZoom = (function () {
+  var isOpen = false;
+  var osd;
+
+  function open($el, src, width, height, options) {
+
+    options = { zoomControls: true }; // TODO: options and defaults
+
+    osd = OpenSeadragon({
+      id: "dz-view",
+      autoHideControls: true,
+      wrapHorizontal: false, // Horizontal repeat
+      wrapVertical: false, // Vertical repeat
+      animationTime: 1.5,
+      minZoomImageRatio: .5, // (Min size relative to viewport size)
+      maxZoomPixelRatio: 3, // (Max size relative to real-size pixel image)
+      showNavigationControl: false, // Important
+      showNavigator: false,
+      mouseNavEnabled: true,
+      preserveViewport: false, // Sequence: preserve zoom level and position when navigating between images
+      visibilityRatio: 0.5, // Default: 0.5
+      zoomPerClick: 1.4, // Default: 2
+      zoomPerScroll: 1.1 // Default: 1.2,
+    });
+
+    osd.open({
+      Image: {
+        xmlns: "http://schemas.microsoft.com/deepzoom/2008",
+        Url: src,
+        Format: "jpg",
+        Overlap: "1",
+        TileSize: "256",
+        Size: { Height: height.toString(), Width: width.toString() }
+      }
+    });
+
+    if (options.zoomControls == true && typeof $.fn.slider === "function") { // Soft dependency: jQueryUI slider
+      $("<div class='dzzoomcontrols'><div class='dzscalebutton minus'></div><div class='dzslider'></div><div class='dzscalebutton plus'></div></div>").appendTo($el);
+      $slider = $el.find(".dzslider");
+
+      osd.addHandler("open", function () {
+        $slider.slider({
+          min: minZoomLevel(),
+          max: maxZoomLevel(),
+          value: currentZoomLevel(),
+          slide: function (e, r) {
+            return osd.viewport.zoomTo(reverseZoomLevel(r.value));
+          }
+        });
+
+        osd.addHandler("zoom", function () {
+          $slider.slider({ value: currentZoomLevel() });
+        });
+
+        $(".dzscalebutton.minus").on("click", zoomOut);
+        $(".dzscalebutton.plus").on("click", zoomIn);
+      });
+    }
+  }
+
+
+  function destroy() {
+    osd.destroy();
+  }
+
+
+  function convertZoomLevel (level) { // OSD zoom to UI zoom
+    return 100 * Math.log(level / osd.viewport.getMinZoom()) / Math.log(2);
+  }
+
+  function reverseZoomLevel (level) { // UI zoom to OSD zoom
+    return osd.viewport.getMinZoom() * Math.pow(2, level / 100)
+  }
+
+  function minZoomLevel () {
+    return convertZoomLevel(null != (t = osd.viewport) ? t.getMinZoom() : void 0);
+  }
+
+  function maxZoomLevel () {
+    return convertZoomLevel(null != (t = osd.viewport) ? t.getMaxZoom() : void 0);
+  }
+
+  function currentZoomLevel () {
+    return convertZoomLevel(null != (t = osd.viewport) ? t.getZoom() : void 0);
+  }
+
+  function zoomIn () {
+    return triggerZoomBy(osd.zoomPerClick);
+  }
+
+  function zoomOut () {
+    return triggerZoomBy(1 / osd.zoomPerClick);
+  }
+
+  function triggerZoomBy (t) {
+    osd.viewport.zoomBy(t);
+    osd.viewport.applyConstraints(); // NB: method not documented (http://openseadragon.github.io/docs/symbols/OpenSeadragon.Viewport.html#applyConstraints)
+  }
+
+  return {
+    open: open,
+    destroy: destroy
+  };
+
+})();
+*/
+
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g; // Set mustache-style interpolate delimiters
 hooks.locale("fr", { monthsShort: "jan_fév_mar_avr_mai_juin_juil_aoû_sep_oct_nov_déc".split("_"), weekdaysShort: "Dim_Lun_Mar_Mer_Jeu_Ven_Sam".split("_") });
 
 var template = {
   thumb: _.template([
-    "<div class='thumb' style='background-image:url(img/240x200/{{ id }}-1.jpg);'>",
+    "<div class='thumb' style='background-image:url(img/240x200/{{ id }}.jpg);'>",
       "<div class='thumb-overlay'></div>",
       "<div class='thumb-date'>{{ date.format('D MMM YYYY') }}</div>",
+    "</div>"
+  ].join("")),
+  content: _.template([
+    "<div class='content'>",
+      "<h1>{{ date.format('D MMM YYYY') }}<br>{{ title }}</h1>",
+      "<div class='text'>{{ text }}</div>",
+      "<% _(media).forEach(function (m) {",
+      "if (m.type === 'img' || m.type === 'dz') { %>",
+        "<div class='media-container {{ m.type }}'>",
+          "<img src='img/{{ m.name }}.jpg' alt='{{ m.title.replace(/(<([^>]+)>)/gi, '') }}' title='{{ m.title.replace(/(<([^>]+)>)/gi, '') }}' data-media='{{ JSON.stringify(m) }}'>",
+          "<div class='legend'>{{ m.title }}</div>",
+        "</div>",
+      "<% }",
+      "}); %>",
     "</div>"
   ].join(""))
 };
@@ -13543,9 +13682,29 @@ function run (data) {
 
   v.on("viewer.open", function () {
     var d = v.$source.data("item");
-    v.$content.html("<div class='content'><h1>" + d.date.format("D MMM YYYY") + "<br>" + d.title + "</h1><div class='text'>" + d.text + "</div><img src='img/" + d.id + "-1.jpg'></div>");
-    var $thumb = v.$content.find("img");
-    $thumb.on("click", function () { w.open($thumb); });
+    v.$content.html(template.content(d));
+    var $thumb = v.$content.find(".media-container.dz > img");
+
+    $thumb.on("click", function () {
+      var width = $thumb.data("media").size[0];
+      var height = $thumb.data("media").size[1];
+
+      w.open($thumb);
+
+
+      // BUG in deepzoom: adds one instance on each open
+      // w.on("viewer.open", () => {
+      //   w.$content.attr("id", "dz-view");
+      //   dz.open(w.$content, "http://cf.pasoliniroma.com/static/scandales-cannois/dz/14-1/", width, height);
+      // });
+
+      // w.on("viewer.close", () => {
+      //   dz.destroy();
+      //   console.log(w.$el);
+      // });
+
+
+    });
   });
 
 }

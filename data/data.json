@@ -5,9 +5,7 @@
       "director": "Alain Resnais",
       "year": 1955,
       "text": "<p>Décembre 1955&nbsp;: le film d'Alain Resnais <em>Nuit et brouillard</em> est présenté à la commission de contrôle. Celle-ci exige la suppression d'un plan de trois secondes. Objet du délit&nbsp;? Le képi d'un gendarme français surveillant le camp d'internement de Pithiviers en 1941. D'un coup de gouache noire, le cinéaste fait disparaître de la photo le couvre-chef de la honte. Il reçoit le prix Jean-Vigo le mois suivant. Dix ans après la fin de la guerre, <em>Nuit et brouillard</em> devient un document incontournable pour saisir le degré de compréhension du système concentrationnaire hitlérien. Mais avec sa sélection au Festival de Cannes, une nouvelle affaire éclate.</p><p>Avril 1956&nbsp;: le film d'Alain Resnais disparaît curieusement de la liste officielle des films en compétition, remplacé par <em>Tant qu'il y aura des bêtes</em> de Brassaï. On lui reproche ses plans de corps et de cadavres, jugés trop choquants, «&nbsp;incompatibles&nbsp;» avec l'atmosphère de fête cannoise. Qui plus est, il s'agit de ne pas gâcher les relations franco-allemandes, l'ambassade de RFA craignant que le documentaire, consacré aux camps de la mort, ne ravive la haine contre le peuple allemand.</p><p>Familles et associations de déportés s'indignent et menacent de défiler sur la Croisette en tenue rayée. C'en est trop. Jean Cayrol, auteur du texte du film, fait éclater sa colère en publiant une tribune sanglante dans <em>Le Monde</em>&nbsp;: «&nbsp;En arrachant brusquement de l'Histoire les pages qui ne lui plaisent plus, La France refuse d'être la France de la vérité&nbsp;», celle de reconnaître ses responsabilités en matière de déportation. Face à la pression, le film est finalement programmé à Cannes, mais hors compétition, le 29 avril, jour de commémoration nationale des déportés.</p><p>Soutenu par le Parti social-démocrate allemand, <em>Nuit et brouillard</em> est présenté la même année au Festival de Berlin. Dans la salle, le critique Jean de Baroncelli voit le film pour la troisième fois. «&nbsp;Jamais le silence, le recueillement de la foule, ne m'a paru aussi impressionnant qu'à Berlin.&nbsp;»</p>",
-      "media": [
-        { "type": "img", "name": "1-1", "title": "" }
-      ],
+      "media": [],
       "date": "1956-04-29",
       "x": 48,
       "y": 1
@@ -17,6 +15,8 @@
       "title": "La Dolce vita",
       "director": "Federico Fellini",
       "year": 1959,
+      "text": "",
+      "media": [],
       "date": "1960-05-11",
       "x": 600,
       "y": 3
@@ -26,6 +26,8 @@
       "title": "L'Avventura",
       "director": "Michelangelo Antonioni",
       "year": 1959,
+      "text": "",
+      "media": [],
       "date": "1960-05-15",
       "x": 625,
       "y": 1
@@ -35,6 +37,10 @@
       "title": "Viridiana",
       "director": "Luis Buñuel",
       "year": 1960,
+      "text": "<p>L'affaire commence lorsque Luis Buñuel accepte de revenir tourner en Espagne malgré son opposition au régime franquiste qui l'avait conduit à s'exiler au Mexique. L'histoire de son nouveau film&nbsp;: Viridiana, une jeune religieuse prête à prononcer ses vœux, rend une dernière visite à son oncle. Obsédé par le souvenir de sa femme morte le jour de leurs noces, le vieil homme se met à fantasmer sur sa nièce. Il veut l'épouser, elle refuse. Il songe à la violer, change d'avis, se pend avec une corde à sauter. Elle hérite du château et décide d'y recueillir un groupe de mendiants.</p><p>Le montage à peine terminé, Buñuel est invité au Festival de Cannes. Il propose de s'y rendre avec une copie de <em>Viridiana</em> dont on programme la projection, in extremis, la veille de la soirée de clôture. Coup de théâtre&nbsp;! Le jury de Jean Giono lui décerne la Palme d'or, partagée avec <em>Une aussi longue absence</em> d'Henri Colpi. En l'absence du cinéaste, le directeur de la cinématographie espagnole, José Muñoz Fontán, rayonnant, monte sur scène récupérer le trophée.</p><p>Mais la joie du haut fonctionnaire retombe bien vite. Deux jours plus tard, le Vatican crie au blasphème. C'est le scandale&nbsp;! Franco en personne limoge le pauvre Muñoz Fontán. Des mesures sont prises sur-le-champ&nbsp;: le permis de tournage de <em>Viridiana</em> est annulé rétroactivement. Le film est censuré en Espagne. Sa sortie retardée en France. Les journaux ont pour interdiction d'en parler. À Rome, le procureur général attaque Buñuel en justice et le condamne à la prison s'il se rend en Italie.</p><p>Comment une œuvre aussi impie a-t-elle pu obtenir le visa de censure&nbsp;? Couteau en forme de crucifix, couronne d'épines jetée au feu, scène d'amour sur fond de <em>Requiem</em> de Mozart, l'Alléluia du <em>Messie</em> de Haendel pendant une odieuse orgie. Et surtout cette reconstitution de la <em>Cène</em> de Léonard de Vinci pour le banquet des mendiants avec, en lieu et place du Christ, un affreux clochard ivre et aveugle.</p><p>Pourtant, Buñuel reçoit bien, au départ, l'autorisation de tourner, la censure n'exigeant qu'une seule modification à la toute fin du film&nbsp;: Viridiana se rend dans la chambre de son cousin, insinuant une liaison incestueuse. Don Luis le rusé accepte de remplacer la scène&nbsp;: la jeune femme rejoint finalement le cousin et la servante en pleine partie de belote rendant la fin du film... plus immorale encore, puisqu'elle suggère un futur ménage à trois&nbsp;!</p>",
+      "media": [
+        { "type": "img", "name": "4-1", "title": "<em>Viridiana</em> (Luis Buñuel, 1960) et sa Cène scandaleuse", "size": [700, 394] }
+      ],
       "date": "1961-05-17",
       "x": 950,
       "y": 2
@@ -44,6 +50,8 @@
       "title": "La Grande bouffe",
       "director": "Marco Ferreri",
       "year": 1973,
+      "text": "<p>Pâtés de foie, poulettes de Bresse, cuissots de chevreuil, sein en gélatine et tarte aux fesses. Non, en cette soirée du 21 mai 1973, le public cannois n'apprécie pas du tout le menu de Marco Ferreri. Bien que préparé par Fauchon, le banquet sent fichtrement le vomi, la merde et le sexe. La chère et la chair se rejoignent dans un excès de sueurs, vertiges et hurlements. C'est le malaise. «&nbsp;Vous n'avez plus qu'à nous pisser dessus maintenant&nbsp;!&nbsp;», lance un spectateur pendant la projection.</p><p>Sur l'écran, Tognazzi, Mastroianni, Piccoli et Noiret, accompagnés de l'ange Ferréol aux formes généreuses, s'adonnent aux bacchanales de Ferreri, se goinfrant jusqu'à en crever. Le cinéaste italien, avec l'aide de Rafael Azcona, scénariste de Buñuel, livre une œuvre violente, impudique et scatologique qui, dans la France de Pompidou, «&nbsp;dépasse tout ce qu'un être normalement constitué doit pouvoir supporter&nbsp;». Sur la descente des marches, c'est la cohue. Les acteurs se font bousculer, insulter. «&nbsp;C'est immonde&nbsp;! Une ignominie&nbsp;! Vous êtes de honteux pornographes&nbsp;!&nbsp;» Sélectionné pour représenter la France au Festival de Cannes, <em>La Grande bouffe</em> fait rougir de honte une grande partie des Français.</p><p>La presse joue les rapporteurs&nbsp;: «&nbsp;Beurk&nbsp;! a éructé Charles Vanel. Lelouch et Marthe Keller étaient à deux doigts de la nausée. Montand est parti une demi-heure avant la fin avec son camarade César.&nbsp;» Envoyé spécial pour Europe 1, François Chalais suffoque&nbsp;: «&nbsp;Le Festival a connu sa journée la plus dégradante et la France sa plus sinistre humiliation. On se demande comment monsieur Philippe Sarde, après la délicate musique de <em>César et Rosalie</em>, a accepté qu'on chie et qu'on pète sur sa musique.&nbsp;»</p><p>Mais quelle meilleure publicité qu'un tel scandale&nbsp;? Le sulfureux producteur de <em>La Grande bouffe</em>, Jean-Pierre Rassam, en profite pour faire monter la sauce et déclare que «&nbsp;les gens de cinéma sont tous des cons&nbsp;». Les semaines suivantes, dans le plus grand calme, le public se rend en nombre voir le film. Déjà culte.</p>",
+      "media": [],
       "date": "1973-05-21",
       "x": 1500,
       "y": 1
@@ -53,6 +61,8 @@
       "title": "La Petite",
       "director": "Louis Malle",
       "year": 1977,
+      "text": "",
+      "media": [],
       "date": "1978-05-22",
       "x": 1800,
       "y": 3
@@ -62,6 +72,8 @@
       "title": "L'Homme de marbre",
       "director": "Andrzej Wajda",
       "year": 1976,
+      "text": "",
+      "media": [],
       "date": "1978-05-29",
       "x": 2100,
       "y": 2
@@ -71,6 +83,8 @@
       "title": "Que le spectacle commence",
       "director": "Bob Fosse",
       "year": 1979,
+      "text": "",
+      "media": [],
       "date": "1980-05-17",
       "x": 2400,
       "y": 3
@@ -80,6 +94,8 @@
       "title": "La Peau",
       "director": "Liliana Cavani",
       "year": 1981,
+      "text": "",
+      "media": [],
       "date": "1981-05-22",
       "x": 2700,
       "y": 1
@@ -89,6 +105,10 @@
       "title": "Max, mon amour",
       "director": "Nagisa Oshima",
       "year": 1985,
+      "text": "",
+      "media": [
+        { "type": "img", "name": "10-1", "title": "Secrets et mon singe&nbsp;: Charlotte Rampling dans <em>Max, mon amour</em> (Nagisa Oshima, 1985)", "size": [700, 424] }
+      ],
       "date": "1986-05-13",
       "x": 3000,
       "y": 2
@@ -98,6 +118,8 @@
       "title": "Sous le soleil de Satan",
       "director": "Maurice Pialat",
       "year": 1986,
+      "text": "",
+      "media": [],
       "date": "1987-05-14",
       "x": 3300,
       "y": 2
@@ -107,6 +129,8 @@
       "title": "Sexe, mensonges et vidéo",
       "director": "Steven Soderbergh",
       "year": 1988,
+      "text": "",
+      "media": [],
       "date": "1989-05-14",
       "x": 3600,
       "y": 3
@@ -116,6 +140,8 @@
       "title": "Underground",
       "director": "Emir Kusturica",
       "year": 1993,
+      "text": "",
+      "media": [],
       "date": "1995-05-26",
       "x": 3900,
       "y": 1
@@ -125,7 +151,11 @@
       "title": "Crash",
       "director": "David Cronenberg",
       "year": 1995,
-      "text": "<p>C'est un prix du Jury <em>très</em> spécial que reçoit David Cronenberg cette année-là. Sur la scène du palais des festivals, pendant la remise du prix, le président du jury, Francis Ford Coppola, a l'air embarrassé. <em>Crash</em> n'a pas fait l'unanimité, il tient à le préciser. Le film est récompensé, mais avant tout «&nbsp;pour son audace et son originalité&nbsp;».</p><p>Il faut dire que <em>Crash</em> n'est pas un film ordinaire. Cronenberg le sait bien, et même pour sa première sélection cannoise, il n'est pas question de respecter les conventions du cinéma hollywoodiens. Le maître de l'obsession traumatique avoue même qu'en adaptant le roman de J.&nbsp;G. Ballard, il réalise un film choc en poussant ses fantasmes très loin. Le livre avait déjà suscité des réactions à sa parution en 1973, amenant un éditeur à signaler que «&nbsp;cet auteur a besoin d'une aide psychiatrique. Ne pas publier&nbsp;».</p><p>C'est une histoire d'orgasmes automobiles. Eros et Thanatos montent en voiture et le public assiste aux expériences perverses d'un groupe d'adeptes de la jouissance par les blessures et les mutilations provoquées par des accidents de voitures. «&nbsp;Film racoleur, malsain, porno&nbsp;», entend-on dans les travées du Festival, qui tient là sa polémique. Même ceux qui aiment le film ne sont pas sûrs des raisons pour lesquelles ils l'aiment. La plaisanterie préférée de la Croisette&nbsp;: «&nbsp;Avez-vous votre permis de conduire&nbsp;?&nbsp;» Cronenberg plaide coupable. «&nbsp;Je comprends les spectateurs qui sifflent. Le film est fait pour provoquer. Et je ne pouvais rêver meilleure publicité que cette controverse pour faire exister une œuvre si singulière.&nbsp;»</p>",
+      "text": "",
+      "text": "<p>C'est un Prix du jury <em>très</em> spécial que reçoit David Cronenberg cette année-là. Sur la scène du palais des festivals, pendant la remise du prix, le président du jury, Francis Ford Coppola, a l'air embarrassé. <em>Crash</em> n'a pas fait l'unanimité, il tient à le préciser. Le film est récompensé, mais avant tout «&nbsp;pour son audace et son originalité&nbsp;».</p><p>Il faut dire que <em>Crash</em> n'est pas un film ordinaire. Cronenberg le sait bien, et même pour sa première sélection cannoise, il n'est pas question de respecter les conventions du cinéma hollywoodiens. Le maître de l'obsession traumatique avoue même qu'en adaptant le roman de J.&nbsp;G. Ballard, il réalise un film choc en poussant ses fantasmes très loin. Le livre avait déjà suscité des réactions à sa parution en 1973, amenant un éditeur à signaler que «&nbsp;cet auteur a besoin d'une aide psychiatrique. Ne pas publier&nbsp;».</p><p>C'est une histoire d'orgasmes automobiles. Eros et Thanatos montent en voiture et le public assiste aux expériences perverses d'un groupe d'adeptes de la jouissance par les blessures et les mutilations provoquées par des accidents de voitures. «&nbsp;Film racoleur, malsain, porno&nbsp;», entend-on dans les travées du Festival, qui tient là sa polémique. Même ceux qui aiment le film ne sont pas sûrs des raisons pour lesquelles ils l'aiment. La plaisanterie préférée de la Croisette&nbsp;: «&nbsp;Avez-vous votre permis de conduire&nbsp;?&nbsp;» Cronenberg plaide coupable. «&nbsp;Je comprends les spectateurs qui sifflent. Le film est fait pour provoquer. Et je ne pouvais rêver meilleure publicité que cette controverse pour faire exister une œuvre si singulière.&nbsp;»</p>",
+      "media": [
+        { "type": "dz", "name": "14-1", "title": "David Cronenberg sur le tournage de <em>Crash</em>", "size": [2048, 1348] }
+      ],
       "date": "1996-05-17",
       "x": 4200,
       "y": 1
@@ -135,6 +165,10 @@
       "title": "Funny Games",
       "director": "Michael Haneke",
       "year": 1996,
+      "text": "<p>«&nbsp;Dans un thriller classique, les enfants et les animaux sont en général épargnés. Dans <em>Funny Games</em>, c'est d'abord le chien qui meurt. Puis l'enfant.&nbsp;» En 1997, l'Autrichien Michael Haneke terrorise la Croisette avec son film, d'une violence telle qu'il mène certains spectateurs au bord de l'évanouissement.</p><p>Deux ados psychopathes séquestrent une famille de bourgeois dans leur maison de vacances. Humiliations, torture, meurtres. Les scènes sont froides et brutales, faites pour «&nbsp;agresser le public&nbsp;». Trois ans après sa «&nbsp;trilogie de la glaciation émotionnelle&nbsp;» (<em>Le Septième continent</em>, <em>Benny's Video</em> et <em>71 fragments d'une chronologie du hasard</em>), interdits en France au moins de 16 ans, Haneke monte volontairement le curseur du malaise et du dégoût un cran plus haut. Son modèle&nbsp;: <em>Salò ou les 120 journées de Sodome</em> de Pier Paolo Pasolini, qui l'a profondément marqué&nbsp;: «&nbsp;Après l'avoir vu, j'ai été choqué. Malade pendant deux semaines. Ça m'a bouleversé. Et c'est à partir de là que j'ai compris ce qu'était vraiment la violence, la souffrance physique et mentale. Naturellement, cela m'a donné envie d'arriver à provoquer cette même décharge.&nbsp;»</p><p>Le film commence donc comme un thriller, mais quand l'agresseur s'adresse à la caméra pour la première fois, il viole les codes du genre. Pris en otage, les spectateurs deviennent les complices passifs du massacre annoncé. Les plus horrifiés quittent la salle. Ceux qui restent croient à un relatif happy end lorsque la mère parvient à abattre l'un des deux tueurs. Soulagement. Le public applaudit. Mais c'est compter sans le manipulateur Haneke, qui rembobine aussitôt le film. Le bourreau ne meurt pas et le calvaire se poursuit. Colère des spectateurs qui ne voient dans <em>Funny Games</em> qu'une apologie de la violence. Le cinéaste s'explique&nbsp;: «&nbsp;Mon film est comme un coup dans l'estomac parce que je pense que le spectateur n'est pas prêt à se rendre compte de son rôle de voyeur. De temps en temps, nous avons besoin d'une bonne gifle pour nous réveiller, car nous perdons le lien avec la réalité de la violence. Certains films américains très violents peuvent être consommables, dans le sens &quot;avoir du plaisir à voir ça&quot;. Avec <em>Funny Games</em>, je voulais parler de la violence sérieusement.&nbsp;»</p><p>Et pour que les spectateurs américains reçoivent bien le message, Haneke enfonce le clou, dix ans plus tard, avec un remake de son propre film&nbsp;: <em>Funny Games US</em>.</p>",
+      "media": [
+        { "type": "img", "name": "15-1", "title": "<em>Funny Games</em> (Michael Haneke, 1996)" }
+      ],
       "date": "1997-05-14",
       "x": 4500,
       "y": 1
@@ -144,6 +178,8 @@
       "title": "Le Goût de la cerise",
       "director": "Abbas Kiarostami",
       "year": 1996,
+      "text": "",
+      "media": [],
       "date": "1997-05-16",
       "x": 4800,
       "y": 1
@@ -153,6 +189,8 @@
       "title": "Khroustaliov, ma voiture !",
       "director": "Alexeï Guerman",
       "year": 1997,
+      "text": "",
+      "media": [],
       "date": "1998-05-20",
       "x": 5100,
       "y": 1
@@ -171,6 +209,8 @@
       "title": "Rosetta",
       "director": "Luc et Jean-Pierre Dardenne",
       "year": 1998,
+      "text": "",
+      "media": [],
       "date": "1999-05-22",
       "x": 5900,
       "y": 1
@@ -180,6 +220,8 @@
       "title": "Irréversible",
       "director": "Gaspar Noé",
       "year": 2001,
+      "text": "",
+      "media": [],
       "date": "2002-05-23",
       "x": 6200,
       "y": 1
@@ -189,6 +231,8 @@
       "title": "The Brown Bunny",
       "director": "Vincent Gallo",
       "year": 2002,
+      "text": "",
+      "media": [],
       "date": "2003-05-21",
       "x": 6500,
       "y": 1
@@ -198,6 +242,8 @@
       "title": "Fahrenheit 9/11",
       "director": "Michael Moore",
       "year": 2003,
+      "text": "",
+      "media": [],
       "date": "2004-05-17",
       "x": 6800,
       "y": 1
@@ -207,6 +253,8 @@
       "title": "La Frontière de l'aube",
       "director": "Philippe Garrel",
       "year": 2007,
+      "text": "",
+      "media": [],
       "date": "2008-05-22",
       "x": 7100,
       "y": 1
@@ -217,6 +265,8 @@
       "title": "Antichrist",
       "director": "Lars von Trier",
       "year": 2008,
+      "text": "",
+      "media": [],
       "date": "2009-05-18",
       "x": 7400,
       "y": 2
@@ -226,6 +276,8 @@
       "title": "Hors-la-loi",
       "director": "Rachid Bouchareb",
       "year": 2009,
+      "text": "",
+      "media": [],
       "date": "2009-05-21",
       "x": 7700,
       "y": 1

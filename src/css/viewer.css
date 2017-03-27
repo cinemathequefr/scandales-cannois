@@ -43,4 +43,7 @@ body.viewer-isopen {
   right: 18px;
 }
 
-
+#dz-view {
+  position: absolute; overflow: hidden;
+  left: 0; top: 0; right: 0; bottom: 0;
+}
