@@ -10,7 +10,7 @@ export default {
     nodeResolve({ jsnext: true }),
     commonjs(),
     buble()
-    // , uglify()
+    , uglify()
   ],
   format: "iife",
   sourceMap: true

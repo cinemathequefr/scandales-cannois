@@ -2,6 +2,7 @@ import moment from "moment";
 import Viewer from "./viewer.js";
 import timeline from "./timeline.js";
 import dz from './deepzoom.js';
+import route from 'riot-route';
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g; // Set mustache-style interpolate delimiters
 moment.locale("fr", { monthsShort: "jan_fév_mar_avr_mai_juin_juil_aoû_sep_oct_nov_déc".split("_"), weekdaysShort: "Dim_Lun_Mar_Mer_Jeu_Ven_Sam".split("_") });
@@ -30,6 +31,11 @@ var template = {
 }
 
 
+
+
+
+
+
 $(function () {
   $.getJSON("data/data.json").then(run);
 });
@@ -49,7 +55,7 @@ function run (data) {
 
   _(data)
   .forEach(item => {
-    $("<div class='thumb-cont'></div>")
+    $("<div class='thumb-cont' data-id='" + item.id + "'></div>")
     .css({
       top: ([65, 50, 35][item.y - 1] - _.random(0, 5, true)) + "vh",
       left: (item.x) + "px",
@@ -73,8 +79,8 @@ function run (data) {
   drop($(".thumb-cont"), 200, 10, true, "bounceInDown");
 
   var v = new Viewer({
-    // width: "50vw"
-    width: "100vw"
+    width: "100vw",
+    enableRequestClose: true
   });
 
   var w = new Viewer({
@@ -83,11 +89,17 @@ function run (data) {
   });
 
   $(".thumb-cont").on("tap", function() { // https://github.com/cubiq/iscroll#optionstap
-    v.open($(this));
+    route("/" + $(this).data("id"));
+  });
+
+
+  v.on("viewer.requestClose", () => {
+    route("/");
   });
 
   v.on("viewer.open", () => {
     var d = v.$source.data("item");
+
     v.$content.html(template.content(d));
     var $thumb = v.$content.find(".media-container.dz > img");
 
@@ -96,7 +108,6 @@ function run (data) {
       let height = $thumb.data("media").size[1];
 
       w.open($thumb);
-
 
       // BUG in deepzoom: adds one instance on each open
       // w.on("viewer.open", () => {
@@ -112,6 +123,24 @@ function run (data) {
 
     });
   });
+
+
+
+
+  route("/", function () {
+    v.close();
+  });
+
+  route("/*", function (id) {
+    var $source = $(".thumb-cont[data-id=" + id + "]");
+    v.open($source);
+  });
+
+  route(function () { // Fallback
+    route("/");
+  });
+
+  route.start(true);
 
 }
 

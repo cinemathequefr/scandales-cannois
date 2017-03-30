@@ -7,7 +7,6 @@
 import velocity from "velocity-animate";
 import ps from "perfect-scrollbar/jquery";
 
-
 // TODO: add perfectScrollbar, allow to set a margin around the viewer
 const Viewer = function (options) {
   this.options = _({}).assign({
@@ -22,7 +21,8 @@ const Viewer = function (options) {
     top: "0px",
     left: "0px",
     width: "100vw",
-    height: "100vh"
+    height: "100vh",
+    enableRequestClose: false // If true, will emit a requestClose event which will have to be manually handled by the callee (by calling close) -- useful for routing
   }, options).value();
 
   this.targetCoordinates = {
@@ -44,14 +44,12 @@ const Viewer = function (options) {
     })
     .appendTo(this.options.$parent);
 
-
   if (this.options.enableScrollbar === true) {
     this.$el.perfectScrollbar({
       suppressScrollX: true,
       wheelSpeed: 3
     });
   }
-
 
   if (this.options.protectBackground === true) {
     this.$protect = $("<div></div>")
@@ -61,21 +59,18 @@ const Viewer = function (options) {
   }
 
   this.$content = $("<div></div>")
-    .addClass(this.options.className + "-content")
-    .appendTo(this.$el);
+  .addClass(this.options.className + "-content")
+  .appendTo(this.$el);
 
   this.$close = $("<div></div>")
-    .addClass(this.options.className + "-close")
-    .appendTo(this.$el)
-    .hide();
-
-}
-
+  .addClass(this.options.className + "-close")
+  .appendTo(this.$el)
+  .hide();
+};
 
 Viewer.lastId = 0;
 Viewer.instancesOpen = [];
 Viewer.isCloseKeyEventAttached = false;
-
 
 Viewer.prototype = (function () {
   "use strict";
@@ -93,6 +88,18 @@ Viewer.prototype = (function () {
 
   function $source () {
     return this.$source;
+  }
+
+
+  function requestClose() {
+    if (this.options.enableRequestClose === true) {
+      if (this._isOpen === false || this.isViewerAnimationRunning === true) {
+        return;
+      }
+      $.publish(this.options.className + ".requestClose");
+    } else {
+      this.close();
+    }
   }
 
 
@@ -130,7 +137,6 @@ Viewer.prototype = (function () {
         this._isOpen = false;
         this.isViewerAnimationRunning = false;
         $.publish(this.options.className + ".close");
-
       }
     });
   }
@@ -172,7 +178,7 @@ Viewer.prototype = (function () {
         this.$close
         .show()
         .one("click", () => {
-          this.close();
+          this.requestClose();
         });
 
         if (this.options.enableScrollbar === true) {
@@ -233,6 +239,7 @@ Viewer.prototype = (function () {
     }
   }
 
+
  // Closing a viewer with the escape key requires some extra work because we want to close only the latest viewer opened
   function attachCloseKeyEvent () {
     $(document).on("keydown", (e) => {
@@ -247,7 +254,7 @@ Viewer.prototype = (function () {
         $(document).off("keyup");
         let instance = _.last(Viewer.instancesOpen);
         instance.$close.removeClass("on");
-        instance.close();
+        instance.requestClose();
       }
     });
 
@@ -260,6 +267,7 @@ Viewer.prototype = (function () {
     $el: $el,
     $source: $source,
     close: close,
+    requestClose: requestClose,
     isOpen: isOpen,
     off: off,
     on: on,
