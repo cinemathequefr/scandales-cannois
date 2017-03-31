@@ -43,6 +43,8 @@ $(function () {
 
 function run (data) {
   data = _(data)
+
+
   .sortBy("date")
   .map(
     item => _(item)
@@ -55,7 +57,7 @@ function run (data) {
 
   _(data)
   .forEach(item => {
-    $("<div class='thumb-cont' data-id='" + item.id + "'></div>")
+    $("<div class='thumb-cont' data-code='" + item.code + "'></div>")
     .css({
       top: ([65, 50, 35][item.y - 1] - _.random(0, 5, true)) + "vh",
       left: (item.x) + "px",
@@ -89,7 +91,7 @@ function run (data) {
   });
 
   $(".thumb-cont").on("tap", function() { // https://github.com/cubiq/iscroll#optionstap
-    route("/" + $(this).data("id"));
+    route("/" + $(this).data("code"));
   });
 
 
@@ -131,8 +133,8 @@ function run (data) {
     v.close();
   });
 
-  route("/*", function (id) {
-    var $source = $(".thumb-cont[data-id=" + id + "]");
+  route("/*", function (code) {
+    var $source = $(".thumb-cont[data-code=" + code + "]");
     v.open($source);
   });
 
