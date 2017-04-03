@@ -3,77 +3,91 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
-    <!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script> -->
-    
-    <script>
-
-    $(function () {
-      var myScroll = new IScroll(".content-wrapper", {
-        scrollY: false,
-        scrollX: true,
-        scrollbars: false,
-        mouseWheel: true,
-      });
-
-
-      $("a").on("click", function () { alert("Click"); });
-
-
-
-
-    });
-
-
-    </script>
-    <style>
-    body {
-      position: relative;
-      background-color: #333; color: #eee;
-    }
-
-    .content-wrapper {
-      position: fixed; overflow: hidden;
-      top: 0; right: 0; bottom: 0; left: 0;
-      outline: solid 1px red;
-    }
-
-    .content-scroller {
-      position: absolute;
-      height: 100%; width: 2500px;
-      outline: solid 1px blue;
-    }
-
-    .item {
-      display: block; position: absolute;
-      width: 120px; height: 80px;
-      background-color: #f33;
-    }
-
-    </style>
+    <!--<link rel="stylesheet" href="src/css/main.css">-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.27/webfontloader.js"></script>
+    <script>WebFont.load({google:{families:["Lora:400,400italic","Permanent Marker"]}});</script>
     <title></title>
+    <style>
+      body {
+        position: relative;
+        background-color: #666;
+      }
+
+      .thumb-sizer {
+        position: absolute;
+        cursor: pointer;
+        transition: 0.25s;
+      }
+
+      .thumb-sizer.size1 { width: 25vh; }
+      .thumb-sizer.size1 .thumb-text { line-height: 22.5vh; font-size: 1.25rem; }
+
+      .thumb-sizer.size2  { width: 30vh; }
+      .thumb-sizer.size2 .thumb-text { line-height: 27vh; font-size: 1.5rem; }
+
+      .thumb-sizer.size3  { width: 35vh; }
+      .thumb-sizer.size3 .thumb-text { line-height: 31.5vh; font-size: 1.75rem; }
+  
+      .thumb-cont {
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%;
+        background-color: #fff;
+      }
+
+      .thumb {
+        position: absolute;
+        top: 5%; right: 5%; bottom: 21.67%; left: 5%;
+        background-size: cover;
+      }
+
+      .thumb-overlay {
+        position: absolute;
+        top: 5%; right: 5%; bottom: 21.67%; left: 5%;
+        background-color: rgba(252, 51, 60, 1);
+        mix-blend-mode: lighten;
+      }
+
+      .thumb-text {
+        position: absolute; overflow: hidden;
+        top: 0; right: 0; bottom: 0; left: 0;
+        color: #111;
+        text-align: center; 
+        font-weight: 600; font-family: "Permanent Marker";
+        white-space: nowrap;
+        -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
+        transform: rotate(-8deg);
+      }
+
+ 
+    </style>
   </head>
   <body>
 
-    <div class="content-wrapper">
-      <div class="content-scroller">
-        <a href="javascript: void 0;" class="item" style="top:100px; left:200px;"></a>
-        <a href="javascript: void 0;" class="item" style="top:300px; left:400px;"></a>
-        <a href="javascript: void 0;" class="item" style="top:650px; left:100px;"></a>
-        <a href="javascript: void 0;" class="item" style="top:480px; left:850px;"></a>
-        <a href="javascript: void 0;" class="item" style="top:250px; left:900px;"></a>
-        <a href="javascript: void 0;" class="item" style="top:150px; left:1000px;"></a>
-        <a href="javascript: void 0;" class="item" style="top:650px; left:1250px;"></a>
-        <a href="javascript: void 0;" class="item" style="top:750px; left:1500px;"></a>
-        <a href="javascript: void 0;" class="item" style="top:420px; left:1800px;"></a>
-        <a href="javascript: void 0;" class="item" style="top:550px; left:2100px;"></a>
+    <div class="thumb-sizer size1" style="top: 120px; left: 10px;">
+      <div class="thumb-cont">
+        <div class="thumb" style="background-image:url(img/240x200/2.jpg);"></div>
+        <div class="thumb-overlay"></div>
+        <div class="thumb-text">16 août 2000</div>
       </div>
     </div>
 
+    <div class="thumb-sizer size2" style="top: 120px; left: 300px;">
+      <div class="thumb-cont">
+        <div class="thumb" style="background-image:url(img/240x200/2.jpg);"></div>
+        <div class="thumb-overlay"></div>
+        <div class="thumb-text">24 juin 1977</div>
+      </div>
+    </div>
+
+    <div class="thumb-sizer size3" style="top: 120px; left: 700px;">
+      <div class="thumb-cont">
+        <div class="thumb" style="background-image:url(img/240x200/2.jpg);"></div>
+        <div class="thumb-overlay"></div>
+        <div class="thumb-text">24 juin 1977</div>
+      </div>
+    </div>
 
 
   </body>

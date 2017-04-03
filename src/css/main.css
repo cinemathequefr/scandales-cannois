@@ -57,8 +57,10 @@ svg.title path {
   border: solid 11px #ffffee; border-bottom-width: 48px;
 }
 
+/*
 .thumb-cont.sizem { width: 180px; height: 120px; }
 .thumb-cont.sizel { width: 216px; height: 144px; }
+*/
 
 .thumb {
   display: block; overflow: hidden;
@@ -68,8 +70,8 @@ svg.title path {
 }
 
 .thumb-overlay {
-  display: block; position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
+  display: block; position: absolute;
   background-color: rgba(252, 51, 60, 1);
   mix-blend-mode: lighten;
   transition: 0.25s;

@@ -1,7 +1,7 @@
 import moment from "moment";
 import Viewer from "./viewer.js";
 import timeline from "./timeline.js";
-import dz from './deepzoom.js';
+// import dz from './deepzoom.js';
 import route from 'riot-route';
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g; // Set mustache-style interpolate delimiters
@@ -19,7 +19,7 @@ var template = {
       "<h1>{{ date.format('D MMM YYYY') }}<br>{{ title }}</h1>",
       "<div class='text'>{{ text }}</div>",
       "<% _(media).forEach(function (m) {",
-      "if (m.type === 'img' || m.type === 'dz') { %>",
+      "if (m.type === 'img') { %>",
         "<div class='media-container {{ m.type }}'>",
           "<img src='img/{{ m.name }}.jpg' alt='{{ m.title.replace(/(<([^>]+)>)/gi, '') }}' title='{{ m.title.replace(/(<([^>]+)>)/gi, '') }}' data-media='{{ JSON.stringify(m) }}'>",
           "<div class='legend'>{{ m.title }}</div>",
@@ -30,21 +30,16 @@ var template = {
   ].join(""))
 }
 
-
-
-
-
-
-
 $(function () {
   $.getJSON("data/data.json").then(run);
 });
 
 
 function run (data) {
+  var v;
+  var scroller;
+
   data = _(data)
-
-
   .sortBy("date")
   .map(
     item => _(item)
@@ -68,8 +63,7 @@ function run (data) {
     .html(template.thumb(item));
   });
 
-
-  var myScroll = new IScroll(".content-wrapper", {
+  scroller = new IScroll(".content-wrapper", {
     scrollY: false,
     scrollX: true,
     scrollbars: false,
@@ -84,16 +78,10 @@ function run (data) {
     width: "100vw",
     enableRequestClose: true
   });
-  
-  var w = new Viewer({
-    width: "100vw",
-    enableScrollbar: false
-  });
 
   $(".thumb-cont").on("tap", function() { // https://github.com/cubiq/iscroll#optionstap
     route("/" + $(this).data("code"));
   });
-
 
   v.on("viewer.requestClose", () => {
     route("/");
@@ -108,26 +96,8 @@ function run (data) {
     $thumb.on("click", () => {
       let width = $thumb.data("media").size[0];
       let height = $thumb.data("media").size[1];
-
-      w.open($thumb);
-
-      // BUG in deepzoom: adds one instance on each open
-      // w.on("viewer.open", () => {
-      //   w.$content.attr("id", "dz-view");
-      //   dz.open(w.$content, "http://cf.pasoliniroma.com/static/scandales-cannois/dz/14-1/", width, height);
-      // });
-
-      // w.on("viewer.close", () => {
-      //   dz.destroy();
-      //   console.log(w.$el);
-      // });
-
-
     });
   });
-
-
-
 
   route("/", function () {
     v.close();
@@ -143,11 +113,7 @@ function run (data) {
   });
 
   route.start(true);
-
 }
-
-
-
 
 
 function drop($elems, delay, duration, shuffle, animationType) {
