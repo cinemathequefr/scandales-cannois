@@ -64,6 +64,10 @@ svg.title path {
 .thumb-sizer.size3  { width: 30vh; }
 .thumb-sizer.size3 .thumb-text { line-height: 27vh; font-size: 1.5rem; }
 
+.thumb-sizer.size4  { width: 32.5vh; }
+.thumb-sizer.size4 .thumb-text { line-height: 29.75vh; font-size: 1.5rem; }
+
+
 .thumb-cont {
   position: relative;
   width: 100%;

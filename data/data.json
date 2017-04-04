@@ -9,7 +9,8 @@
     "date": "1956-04-29",
     "x": 48,
     "y": 1,
-    "code": "nuit-et-brouillard"
+    "code": "nuit-et-brouillard",
+    "note": 6
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     "date": "1960-05-11",
     "x": 600,
     "y": 3,
-    "code": "la-dolce-vita"
+    "code": "la-dolce-vita",
+    "note": 9
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
     "date": "1960-05-15",
     "x": 625,
     "y": 1,
-    "code": "l-avventura"
+    "code": "l-avventura",
+    "note": 9
   },
   {
     "id": 4,
@@ -55,7 +58,8 @@
     "date": "1961-05-17",
     "x": 950,
     "y": 2,
-    "code": "viridiana"
+    "code": "viridiana",
+    "note": 8
   },
   {
     "id": 5,
@@ -65,9 +69,10 @@
     "text": "<p>Pâtés de foie, poulettes de Bresse, cuissots de chevreuil, sein en gélatine et tarte aux fesses. Non, en cette soirée du 21 mai 1973, le public cannois n'apprécie pas du tout le menu de Marco Ferreri. Bien que préparé par Fauchon, le banquet sent fichtrement le vomi, la merde et le sexe. La chère et la chair se rejoignent dans un excès de sueurs, vertiges et hurlements. C'est le malaise. «&nbsp;Vous n'avez plus qu'à nous pisser dessus maintenant&nbsp;!&nbsp;», lance un spectateur pendant la projection.</p><p>Sur l'écran, Tognazzi, Mastroianni, Piccoli et Noiret, accompagnés de l'ange Ferréol aux formes généreuses, s'adonnent aux bacchanales de Ferreri, se goinfrant jusqu'à en crever. Le cinéaste italien, avec l'aide de Rafael Azcona, scénariste de Buñuel, livre une œuvre violente, impudique et scatologique qui, dans la France de Pompidou, «&nbsp;dépasse tout ce qu'un être normalement constitué doit pouvoir supporter&nbsp;». Sur la descente des marches, c'est la cohue. Les acteurs se font bousculer, insulter. «&nbsp;C'est immonde&nbsp;! Une ignominie&nbsp;! Vous êtes de honteux pornographes&nbsp;!&nbsp;» Sélectionné pour représenter la France au Festival de Cannes, <em>La Grande bouffe</em> fait rougir de honte une grande partie des Français.</p><p>La presse joue les rapporteurs&nbsp;: «&nbsp;Beurk&nbsp;! a éructé Charles Vanel. Lelouch et Marthe Keller étaient à deux doigts de la nausée. Montand est parti une demi-heure avant la fin avec son camarade César.&nbsp;» Envoyé spécial pour Europe 1, François Chalais suffoque&nbsp;: «&nbsp;Le Festival a connu sa journée la plus dégradante et la France sa plus sinistre humiliation. On se demande comment monsieur Philippe Sarde, après la délicate musique de <em>César et Rosalie</em>, a accepté qu'on chie et qu'on pète sur sa musique.&nbsp;»</p><p>Mais quelle meilleure publicité qu'un tel scandale&nbsp;? Le sulfureux producteur de <em>La Grande bouffe</em>, Jean-Pierre Rassam, en profite pour faire monter la sauce et déclare que «&nbsp;les gens de cinéma sont tous des cons&nbsp;». Les semaines suivantes, dans le plus grand calme, le public se rend en nombre voir le film. Déjà culte.</p>",
     "media": [],
     "date": "1973-05-21",
-    "x": 1500,
+    "x": 1700,
     "y": 1,
-    "code": "la-grande-bouffe"
+    "code": "la-grande-bouffe",
+    "note": 10
   },
   {
     "id": 6,
@@ -77,9 +82,10 @@
     "text": "<p>«&nbsp;Louis Malle, encore un scandale&nbsp;!&nbsp;» Après <em>Les Amants</em> en 1958, <em>Le Feu Follet</em> en 1963, <em>Le Souffle au cœur</em> en 1971 et <em>Lacombe Lucien</em> en 1974, Louis Malle défraie une fois de plus la chronique avec son premier film américain, <em>La Petite</em>, présenté en sélection officielle du Festival de Cannes en 1978. Objet du délit&nbsp;? L'histoire, au début du XX<sup>e</sup> siècle, d'une gamine de douze ans élevée dans un bordel de La Nouvelle-Orléans, où sa mère est pensionnaire. La jeune Brooke Shields, du même âge que son personnage, interprète l'adorable Violet, virevoltant entre les chambres et le salon capiteux, traînant dans les jambes de ces dames et de leurs messieurs.</p><p>Une partie du public cannois crie à la provocation. Mais c'est surtout une scène qui crée le malaise&nbsp;: celle qui décrit la vente aux enchères de la virginité de l'enfant. Louis Malle se défend. «&nbsp;Rien de scandaleux dans le fait de raconter une histoire vraie. La prostitution enfantine existe, elle a toujours existé. Il y a des articles dans les journaux à ce sujet, je ne vois pas pourquoi je ne pourrais pas en faire un film.&nbsp;» Les journalistes cherchent alors la faille du côté de Brooke Shields. N'a t-elle pas été choquée lorsque Malle lui a proposé un rôle aussi sulfureux&nbsp;? Seulement, la jeune actrice n'en est pas à son premier scandale. À l'âge de dix ans, elle pose, sortant du bain, nue et maquillée. Plus tard, la photo de Gary Gross est interdite en raison de «&nbsp;son potentiel de provocation sexuelle&nbsp;». Le scandale glisse sur la Lolita. À Cannes, avec le film de Louis Malle, la petite Brooke devient une star de douze ans.</p>",
     "media": [],
     "date": "1978-05-22",
-    "x": 1800,
+    "x": 2200,
     "y": 3,
-    "code": "la-petite"
+    "code": "la-petite",
+    "note": 7
   },
   {
     "id": 7,
@@ -89,9 +95,10 @@
     "text": "",
     "media": [],
     "date": "1978-05-29",
-    "x": 2100,
+    "x": 2400,
     "y": 2,
-    "code": "l-homme-de-marbre"
+    "code": "l-homme-de-marbre",
+    "note": null
   },
   {
     "id": 8,
@@ -101,9 +108,10 @@
     "text": "",
     "media": [],
     "date": "1980-05-17",
-    "x": 2400,
-    "y": 3,
-    "code": "que-le-spectacle-commence"
+    "x": 2800,
+    "y": 2,
+    "code": "que-le-spectacle-commence",
+    "note": null
   },
   {
     "id": 9,
@@ -113,9 +121,10 @@
     "text": "<p>Sept ans après les polémiques qui entourent la sortie du sulfureux <em>Portier de nuit</em>, critiqué pour son «&nbsp;esthétique nazie&nbsp;» et «&nbsp;sa mise en scène malsaine&nbsp;», Liliana Cavani débarque sur la Croisette avec un film qui n'arrange pas sa réputation de «&nbsp;cinéaste maudite&nbsp;».</p><p><em>La Peau</em> est une adaptation du roman autobiographique de Malaparte, celui de la célèbre villa de Capri immortalisée dans <em>Le Mépris</em> de Godard. Officier italien et dandy provocateur, il raconte son rôle d'intermédiaire avec les Alliés, à Naples, au moment de sa libération par les forces américaines. Son but&nbsp;: montrer le choc de deux cultures. Le livre, publié en 1949, est très mal reçu par les Italiens qui n'apprécient guère le tableau d'abominations et de dégoût que l'écrivain fait de sa ville d'adoption au sortir de la guerre, où tout le monde en prend pour son grade, vainqueurs comme vaincus.</p><p>La cinéaste italienne choisit Marcello Mastroianni pour jouer le rôle de Malaparte. Il est sublime et met tout le monde d'accord. Idem pour Burt Lancaster dans le rôle du général Cork. Non, ce qui déplaît au public cannois, ce sont toutes ces atrocités filmées avec un hyper-réalisme qui laisse chacun au bord de la nausée. Et plus encore que les tripes au soleil d'un moribond hurlant sa souffrance, le sang d'une vierge étalé sur le visage de son père ou un fœtus bouilli en guise de plat, c'est la façon dont «&nbsp;Cavani contemple avec mépris ses tristes héros&nbsp;» qui choque certains spectateurs. Avec son final apocalyptique du Vésuve en flammes et l'image d'un corps écrasé par les chars libérateurs, on sort de la projection physiquement et moralement groggy.</p><p>Oui, Cavani fait scandale, mais c'est pour mieux exprimer l'infamie engendrée, dit-elle, par «&nbsp;la stupidité des hommes, incapables de voir le bonheur, de raisonner, de cohabiter&nbsp;». Et elle ajoute&nbsp;: «&nbsp;L'homme n'est doué que pour mettre des barrières et créer des conflits. Tout ça au nom de l'économie et de la paix.&nbsp;»</p>",
     "media": [],
     "date": "1981-05-22",
-    "x": 2700,
+    "x": 3100,
     "y": 1,
-    "code": "la-peau"
+    "code": "la-peau",
+    "note": 6
   },
   {
     "id": 10,
@@ -135,21 +144,23 @@
       }
     ],
     "date": "1986-05-13",
-    "x": 3000,
+    "x": 3600,
     "y": 2,
-    "code": "max-mon-amour"
+    "code": "max-mon-amour",
+    "note": 5
   },
   {
     "id": 11,
     "title": "Sous le soleil de Satan",
     "director": "Maurice Pialat",
     "year": 1986,
-    "text": "",
+    "text": "<p>40<sup>e</sup> Festival de Cannes, 19 mai 1987. Pour la première fois, la cérémonie de remise des prix est retransmise en direct. Devant les caméras d'Antenne 2, Maurice Pialat vient chercher sa Palme d'or pour son film <em>Sous le soleil de Satan</em>... sous les sifflets.</p><p>Retour en arrière. Depuis la projection du film, les critiques se déchaînent. <em>Sous le soleil de Satan</em> n'a pas plu à tout le monde&nbsp;: trop sombre, trop lisse. L'adaptation du roman de Bernanos trop littérale. Les dialogues sont longs, soutenus. Pialat et Toscan du Plantier s'en prennent à leur attaché de presse. Comment a-t-il pu laisser sortir des critiques aussi détestables&nbsp;? Depardieu intervient et demande à ce que l'on retire le film de la compétition. Pialat et Toscan écrivent à la direction du festival, dénonçant «&nbsp;la pourriture du système, son organisation et ses méthodes&nbsp;».</p><p>Pendant ce temps, ça s'agite aussi en coulisses. Yves Montand, alors président du jury, doit faire preuve de diplomatie lorsqu'Elem Klimov, membre du jury, refuse catégoriquement que la Palme d'or soit remise au film de Nikita Mikhalkov, <em>Les Yeux noirs</em>, grand favori de la sélection. Farouchement opposé à son compatriote soviétique dont il ne partage pas les idées politiques, Klimov déclare violemment&nbsp;: «&nbsp;Si cette ordure, ce salopard de Mikhalkov est récompensé, je me retire du jury et ferai connaître ma décision avec éclat.&nbsp;»</p><p>Pour éviter le scandale, le jury décide finalement d'attribuer la récompense à Maurice Pialat. Ce qui déclenche un autre scandale. Sur scène, devant les huées, Pialat jubile. Empochant sa Palme d'or, il fait cette déclaration fracassante devenue culte&nbsp;: «&nbsp;Je ne vais pas faillir à ma réputation, je suis surtout content ce soir pour tous les cris et les sifflets que vous m'adressez. Et si vous ne m'aimez pas, je peux vous dire que je ne vous aime pas non plus&nbsp;!&nbsp;» En guise de bouquet final, Pialat lève le poing vers la salle, un poing de victoire que certains prendront comme un bras d'honneur.</p>",
     "media": [],
     "date": "1987-05-14",
-    "x": 3300,
+    "x": 3800,
     "y": 2,
-    "code": "sous-le-soleil-de-satan"
+    "code": "sous-le-soleil-de-satan",
+    "note": 8
   },
   {
     "id": 12,
@@ -159,9 +170,10 @@
     "text": "<p>14 mai 1989, Wim Wenders annonce l'une des Palmes d'or les plus inattendues de l'histoire du Festival de Cannes&nbsp;: <em>Sexe, mensonges et vidéo</em>. Trois mots, quatre acteurs, et la récompense suprême pour le premier film d'un jeune réalisateur inconnu de vingt-six ans.</p><p>L'histoire de Graham, qui collectionne les enregistrements vidéo de femmes dévoilant les détails de leur vie intime, séduit véritablement la Croisette. Sensuel et cérébral, le film de Soderbergh se détache de la production américaine moyenne. Incontestablement, «&nbsp;un gentil petit film&nbsp;» parfait pour décrocher la Caméra d'or, qui récompense les premières œuvres. Mais «&nbsp;certainement Pas une palme d'or&nbsp;», doublée d'un très contesté Prix d'interprétation masculine pour James Spader. «&nbsp;Une aberration&nbsp;!&nbsp;» L'acteur, déjà rentré aux États-Unis, n'est même pas là pour recevoir son prix.</p><p>Mais le plus surpris de tous, c'est Soderbergh lui-même. Tellement abasourdi, qu'à la fin de la cérémonie, il en oublie son trophée sous le siège. Quoi&nbsp;? C'est lui le grand vainqueur, face à Imamura, Scola, Kusturica ou le favori Spike Lee&nbsp;? Le président du jury n'a pas retenu le film de Spike Lee, prétextant qu'il n'y a pas de héros dans <em>Do the Right Thing</em>. Le cinéaste afro-américain, très fâché, demandera à propos du personnage interprété par Spader&nbsp;: «&nbsp;Qu'y a t-il d'héroïque à mater des femmes sur vidéo&nbsp;?&nbsp;» Et d'ajouter qu'il possède depuis une batte de base-ball avec le nom de Wenders gravé dessus.</p>",
     "media": [],
     "date": "1989-05-14",
-    "x": 3600,
+    "x": 4000,
     "y": 3,
-    "code": "sexe-mensonges-et-video"
+    "code": "sexe-mensonges-et-video",
+    "note": 4
   },
   {
     "id": 13,
@@ -171,9 +183,10 @@
     "text": "",
     "media": [],
     "date": "1995-05-26",
-    "x": 3900,
+    "x": 4300,
     "y": 1,
-    "code": "underground"
+    "code": "underground",
+    "note": null
   },
   {
     "id": 14,
@@ -193,9 +206,10 @@
       }
     ],
     "date": "1996-05-17",
-    "x": 4200,
+    "x": 4600,
     "y": 1,
-    "code": "crash"
+    "code": "crash",
+    "note": 8
   },
   {
     "id": 15,
@@ -211,9 +225,10 @@
       }
     ],
     "date": "1997-05-14",
-    "x": 4500,
+    "x": 4800,
     "y": 1,
-    "code": "funny-games"
+    "code": "funny-games",
+    "note": 7
   },
   {
     "id": 16,
@@ -223,21 +238,23 @@
     "text": "<p>Lorsqu'un journaliste lui demande s'il a eu des problèmes pour venir à Cannes, Abbas Kiarostami répond&nbsp;: «&nbsp;Je suis arrivé un peu en retard, mais j'y suis.&nbsp;» Le dernier film du cinéaste iranien figure dans la sélection officielle, mais a bien failli ne pas l'être. Au départ, les autorités iraniennes trouvent <em>Le Goût de la cerise</em> suspect, l'œuvre n'ayant pas été présentée au Festival de Téhéran (passage obligé avant toute diffusion à l'étranger). Et puis le sujet du film n'est pas franchement conforme à la «&nbsp;morale islamique&nbsp;». L'histoire de cet homme dont l'ultime liberté est de se suicider ne passe pas la censure. Le film reste bloqué jusqu'à ce que le ministère iranien des Affaires étrangères intervienne, finalement, en faveur du cinéaste, juste après l'ouverture du festival, jugeant qu'il serait fâcheux de voir l'Iran donner un exemple de censure de façon aussi officielle.</p><p><em>Le Goût de la cerise</em> est projeté le 16 mai. Deux jours plus tard, après de longues délibérations et quelques dissensions entre Nanni Moretti et la présidente Isabelle Adjani, le film reçoit la Palme d'or, ex-aequo avec le film d'Imamura, <em>L'Anguille</em>. Le palmarès est critiqué. On lui reproche de couper la Palme en deux, ce qui affaiblit sa portée. Qui plus est, elle semble couronner davantage les cinéastes que leur dernier film.</p><p>Cependant, Kiarostami a d'autres inquiétudes&nbsp;: «&nbsp;Je suis évidemment content de recevoir le prix, mais l'idée de le rapporter en Iran rend ma situation difficile.&nbsp;» Entre une période de deuil religieux national et des élections au moment de son retour, aucun média iranien ne fera mention de cette Palme. Et c'est très bien ainsi. Exceptés quelques amis venus l'accueillir à l'aéroport avec joie et émotion, les seules réactions concernant le festival seront provoquées par le baiser que lui donne Catherine Deneuve en lui remettant la Palme d'or. «&nbsp;Comme il n'a été question ni du film ni du festival, de nombreux Iraniens se demandent pourquoi je suis allé en France uniquement pour embrasser une femme devant les caméras&nbsp;!&nbsp;»</p>",
     "media": [],
     "date": "1997-05-16",
-    "x": 4800,
+    "x": 4900,
     "y": 1,
-    "code": "le-gout-de-la-cerise"
+    "code": "le-gout-de-la-cerise",
+    "note": 2
   },
   {
     "id": 17,
     "title": "Khroustaliov, ma voiture !",
     "director": "Alexeï Guerman",
     "year": 1997,
-    "text": "",
+    "text": "<p>«&nbsp;À mon avis, tous ces intellectuels de gauche européens n'ont jamais rien compris à ce qui se passait chez nous.&nbsp;» Le Russe Alexeï Guerman est amer. Son dernier film, <em>Khroustaliov, ma voiture&nbsp;!</em>, présenté à Cannes cette année-là, fait figure de grand oublié du palmarès. On parle pourtant de chef-d'œuvre. Comme ses précédents films, quatre en 29 ans, une œuvre puissante, toujours en noir et blanc et dédiée à l'histoire de son pays.</p><p><em>Khroustaliov, ma voiture&nbsp;!</em> n'a rencontré que du mépris de la part des festivaliers. Dans ce tableau cauchemardesque des dernières heures du stalinisme, les torrents d'images, où scènes de violence succèdent aux scènes de folie, plongent le spectateur dans un état de stupeur. Trop de paroles, de personnages, de bruits. Les spectateurs ont le tournis. Un film effrayant, difficile à suivre, hors normes, que le cinéaste russe a mis près de dix ans à sortir, entre censures successives et tournage chaotique. «&nbsp;J'ai refusé de tourner avec de la pellicule française&nbsp;: elle embellit tout. Notre réalité doit être filmée avec notre pellicule&nbsp;!&nbsp;» Car Guerman veut aussi rendre compte de ce qu'il appelle «&nbsp;l'insupportable douleur d'être russe&nbsp;».</p><p>Douloureuse aussi, cette reconnaissance qui peine à venir. «&nbsp;À 60 ans, je connais ma place. Et je sais que l'accueil que j'ai reçu à Cannes est profondément injuste. En France, tout le monde dit admirer Tarkovski. Mais à l'époque où vous avez vu ses premiers films, tout le monde lui crachait dessus. Le problème de l'échec à Cannes, c'est que maintenant, plus personne ne veut acheter le film pour le distribuer en Russie, parce que je n'ai pas eu de prix. Cannes a encore fragilisé ma position économique.&nbsp;»</p><p>À sa mort en 2013, les critiques sont unanimes. Alexeï Guerman est classé parmi les plus grands cinéastes russes contemporains.</p>",
     "media": [],
     "date": "1998-05-20",
     "x": 5100,
     "y": 1,
-    "code": "khroustaliov-ma-voiture"
+    "code": "khroustaliov-ma-voiture",
+    "note": null
   },
   {
     "id": 18,
@@ -249,7 +266,8 @@
     "date": "1999-05-22",
     "x": 5900,
     "y": 1,
-    "code": "rosetta-et-l-humanite"
+    "code": "rosetta-et-l-humanite",
+    "note": 8
   },
   {
     "id": 19,
@@ -261,7 +279,8 @@
     "date": "2002-05-23",
     "x": 6200,
     "y": 1,
-    "code": "irreversible"
+    "code": "irreversible",
+    "note": null
   },
   {
     "id": 20,
@@ -273,7 +292,8 @@
     "date": "2003-05-21",
     "x": 6500,
     "y": 1,
-    "code": "the-brown-bunny"
+    "code": "the-brown-bunny",
+    "note": null
   },
   {
     "id": 21,
@@ -285,19 +305,21 @@
     "date": "2004-05-17",
     "x": 6800,
     "y": 1,
-    "code": "fahrenheit-9-11"
+    "code": "fahrenheit-9-11",
+    "note": 6
   },
   {
     "id": 22,
     "title": "La Frontière de l'aube",
     "director": "Philippe Garrel",
     "year": 2007,
-    "text": "",
+    "text": "<p><em>Libération</em> du 23 mai 2008. Philippe Azoury et Olivier Séguret sont très énervés&nbsp;: «&nbsp;Ah&nbsp;! Si ce soleil avait aussi pu cramer dans son feu d'enfer les douze trous du cul qui ont tenté de pourrir la projection de leurs ricanements ringards.&nbsp;» La controverse qui éclate sur la Croisette cette année-là est provoquée par le film de Philippe Garrel, héritier «&nbsp;rock&nbsp;» de la Nouvelle Vague. Première sélection du cinéaste à Cannes, <em>La Frontière de l'aube</em> déclenche rires et sifflets dès la première projection matinale. Mais que reproche t-on au juste à cette histoire d'amour fou entre une star de ciné fragile et un photographe&nbsp;?</p><p><em>La Frontière de l'aube</em>, aux allures de film fantastique, est perçu par ses détracteurs comme plat, premier degré, ridicule. Au contraire, pour Azoury et Séguret, avec son noir et blanc somptueux et sépulcral, il rappelle les plus beaux films de vampire des années 20. «&nbsp;Devant des apparitions qui évoquent l'innocence d'un Murnau, ces cons finis riaient.&nbsp;» Si la présence chimique de Laura Smet, qui irradie le film en font chavirer plus d'un, d'autres, comme Eric Neuhoff au Figaro, n'y voient qu'une «&nbsp;revenante boudeuse et croquignolette, entre Blanche-Neige et Poltergeist&nbsp;». Louis Garrel n'est pas épargné&nbsp;: «&nbsp;Il serait urgent de lui expliquer qu'on ne peut pas être à la fois Fernandel et Guy Debord&nbsp;».</p><p>La séance du lendemain est un désastre&nbsp;: la salle est à moitié vide. Préférant se fier aux rumeurs, les festivaliers condamnent aussitôt le film avant même de l'avoir vu. «&nbsp;Laissons de côté les grincheux, les râleurs, les insensibles. Car le dernier film de Philippe Garrel est d'une telle perfection plastique, d'une beauté si saisissante et met en scène des acteurs si incroyables qu'on voudrait jeter aux lions tous ceux qui n'ont pas voulu se laisser porter par cette histoire.&nbsp;» Avec <em>La Frontière de l'aube</em>, on n'avait pas vu un tel affrontement depuis <em>La Maman et la putain</em> d'Eustache en 1973 et <em>L'Avventura</em> d'Antonioni en 1960, deux autres films aux personnages féminins forts et sublimes.</p>",
     "media": [],
     "date": "2008-05-22",
     "x": 7100,
     "y": 1,
-    "code": "la-frontiere-de-laube"
+    "code": "la-frontiere-de-laube",
+    "note": 6
   },
   {
     "id": 23,
@@ -309,7 +331,8 @@
     "date": "2009-05-18",
     "x": 7400,
     "y": 2,
-    "code": "antichrist"
+    "code": "antichrist",
+    "note": 9
   },
   {
     "id": 24,
@@ -321,6 +344,7 @@
     "date": "2009-05-21",
     "x": 7700,
     "y": 1,
-    "code": "hors-la-loi"
+    "code": "hors-la-loi",
+    "note": 4
   }
 ]

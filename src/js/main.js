@@ -53,7 +53,8 @@ function run (data) {
 
   _(data)
   .forEach(item => {
-    $("<div class='thumb-sizer size" +  _.sample(["1", "2", "3"]) + "'></div>")
+    // $("<div class='thumb-sizer size" +  _.sample(["1", "2", "3"]) + "'></div>")
+    $("<div class='thumb-sizer size" +  ([1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4][item.note] || 1) + "'></div>")
     .css({
       top: ([65, 50, 35][item.y - 1] - _.random(0, 5, true)) + "vh",
       left: (item.x) + "px",
@@ -105,13 +106,14 @@ function run (data) {
 
   route("/*", function (code) {
     var $source = $(".thumb-cont[data-code=" + code + "]");
-
-    scroller.scrollToElement($source.get(0), 250, true, true, IScroll.utils.ease.quadratic);
-
-    window.setTimeout(() => {
-      v.open($source);
-    }, 275);
-
+    if ($source.length > 0) {
+      scroller.scrollToElement($source.get(0), 250, true, true, IScroll.utils.ease.quadratic);
+      window.setTimeout(() => {
+        v.open($source);
+      }, 275);
+    } else {
+      route("/");
+    }
   });
 
   route(function () { // Fallback
