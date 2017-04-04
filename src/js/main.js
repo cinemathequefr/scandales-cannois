@@ -90,7 +90,6 @@ function run (data) {
 
   v.on("viewer.open", () => {
     var d = v.$source.data("item");
-
     v.$content.html(template.content(d));
     var $thumb = v.$content.find(".media-container.dz > img");
 
@@ -106,7 +105,13 @@ function run (data) {
 
   route("/*", function (code) {
     var $source = $(".thumb-cont[data-code=" + code + "]");
-    v.open($source);
+
+    scroller.scrollToElement($source.get(0), 250, true, true, IScroll.utils.ease.quadratic);
+
+    window.setTimeout(() => {
+      v.open($source);
+    }, 275);
+
   });
 
   route(function () { // Fallback
