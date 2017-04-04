@@ -48,41 +48,51 @@ svg.title path {
   -moz-animation-iteration-count: 1;
 }
 
-.thumb-cont {
+
+.thumb-sizer {
   position: absolute;
-  width: 240px; height: 200px;
-  box-shadow: -8px -8px 12px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  /*box-sizing: border-box;*/
-  border: solid 11px #ffffee; border-bottom-width: 48px;
-}
-
-/*
-.thumb-cont.sizem { width: 180px; height: 120px; }
-.thumb-cont.sizel { width: 216px; height: 144px; }
-*/
-
-.thumb {
-  display: block; overflow: hidden;
-  width: 240px; height: 200px;
-  background-color: #fc333c;
-  background-position: 50% 50%; background-size: cover;
-}
-
-.thumb-overlay {
-  top: 0; right: 0; bottom: 0; left: 0;
-  display: block; position: absolute;
-  background-color: rgba(252, 51, 60, 1);
-  mix-blend-mode: lighten;
   transition: 0.25s;
 }
 
-.thumb-date {
-  display: block; position: absolute;
+.thumb-sizer.size1 { width: 25vh; }
+.thumb-sizer.size1 .thumb-text { line-height: 22.5vh; font-size: 1.25rem; }
+
+.thumb-sizer.size2  { width: 27.5vh; }
+.thumb-sizer.size2 .thumb-text { line-height: 24.75vh; font-size: 1.375rem; }
+
+.thumb-sizer.size3  { width: 30vh; }
+.thumb-sizer.size3 .thumb-text { line-height: 27vh; font-size: 1.5rem; }
+
+.thumb-cont {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  background-color: #fff;
+  box-shadow: -8px -8px 12px rgba(0, 0, 0, 0.25);
+}
+
+.thumb {
+  position: absolute;
+  top: 5%; right: 5%; bottom: 21.67%; left: 5%;
+  background-size: cover;
+  background-color: #fc333c;
+}
+
+.thumb-overlay {
+  position: absolute;
+  top: 5%; right: 5%; bottom: 21.67%; left: 5%;
+  background-color: rgba(252, 51, 60, 1);
+  mix-blend-mode: lighten;
+}
+
+.thumb-text {
+  position: absolute; overflow: hidden;
   top: 0; right: 0; bottom: 0; left: 0;
   color: #111;
-  text-align: center; line-height: 200px;
-  font-size: 1.25rem; font-weight: 600; font-family: "Permanent Marker";
+  text-align: center; 
+  font-weight: 600; font-family: "Permanent Marker";
+  white-space: nowrap;
   -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
   transform: rotate(-8deg);
 }

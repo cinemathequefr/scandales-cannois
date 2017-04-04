@@ -9,10 +9,11 @@ moment.locale("fr", { monthsShort: "jan_fév_mar_avr_mai_juin_juil_aoû_sep_oct_
 
 var template = {
   thumb: _.template([
-    "<div class='thumb' style='background-image:url(img/240x200/{{ id }}.jpg);'>",
+    "<div class='thumb-cont' data-code='{{ code }}'>",
+      "<div class='thumb' style='background-image:url(img/240x200/{{ id }}.jpg);'></div>",
       "<div class='thumb-overlay'></div>",
-      "<div class='thumb-date'>{{ date.format('D MMM YYYY') }}</div>",
-    "</div>"
+      "<div class='thumb-text'>{{ date.format('D MMM YYYY') }}</div>",
+    "</div>",
   ].join("")),
   content: _.template([
     "<div class='content'>",
@@ -52,15 +53,15 @@ function run (data) {
 
   _(data)
   .forEach(item => {
-    $("<div class='thumb-cont' data-code='" + item.code + "'></div>")
+    $("<div class='thumb-sizer size" +  _.sample(["1", "2", "3"]) + "'></div>")
     .css({
       top: ([65, 50, 35][item.y - 1] - _.random(0, 5, true)) + "vh",
       left: (item.x) + "px",
-      backgroundImage: "url(img/" + item.id + ".jpg)"
     })
-    .data("item", item)
     .appendTo($(".content-scroller"))
-    .html(template.thumb(item));
+    .html(template.thumb(item))
+    .children(".thumb-cont")
+    .data("item", item)
   });
 
   scroller = new IScroll(".content-wrapper", {
