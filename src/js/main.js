@@ -53,7 +53,6 @@ function run (data) {
 
   _(data)
   .forEach(item => {
-    // $("<div class='thumb-sizer size" +  _.sample(["1", "2", "3"]) + "'></div>")
     $("<div class='thumb-sizer size" +  ([1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4][item.note] || 1) + "'></div>")
     .css({
       top: ([65, 50, 35][item.y - 1] - _.random(0, 5, true)) + "vh",
@@ -73,7 +72,7 @@ function run (data) {
     tap: true
   });
 
-  drop($("svg.title path"), 0, 100, false, "bounceInUp");
+  drop($("svg.title path"), 0, 75, false, "bounceInUp");
   drop($(".thumb-cont"), 200, 10, true, "bounceInDown");
 
   var v = new Viewer({

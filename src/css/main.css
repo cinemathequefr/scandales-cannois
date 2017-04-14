@@ -38,8 +38,7 @@ a#logocf:hover {
 svg.title {
   position: fixed;
   top: 8px; left: 8px;
-  fill: #fc333c;
-  /*outline: solid 1px red;*/
+  fill: #ff3d47;
 }
 
 svg.title path {
