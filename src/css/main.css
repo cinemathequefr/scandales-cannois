@@ -36,8 +36,9 @@ a#logocf:hover {
 
 
 svg.title {
+  width: 28vw; height: 22.4vw;
   position: fixed;
-  top: 8px; left: 8px;
+  top: 0px; left: 0;
   fill: #ff3d47;
 }
 
@@ -53,6 +54,12 @@ svg.title path {
   cursor: pointer;
   transition: 0.25s;
 }
+
+.thumb-sizer:hover {
+  transform: translateY(-8px);
+  transition: 0.1s;
+}
+
 
 .thumb-sizer.size1 { width: 25vh; }
 .thumb-sizer.size1 .thumb-text { line-height: 22.5vh; font-size: 1.25rem; }
@@ -87,6 +94,7 @@ svg.title path {
   top: 5%; right: 5%; bottom: 21.67%; left: 5%;
   background-color: rgba(252, 51, 60, 1);
   mix-blend-mode: lighten;
+  transition: 0.1s;
 }
 
 .thumb-text {
@@ -129,14 +137,28 @@ svg.title path {
 }
 
 .media-container {
+  overflow: hidden;
   margin: 36px 0;
 }
+
+/*
+.media-container.video-ina {
+  background-color: #111; 
+  width: 700px; height: 525px;
+}
+*/
 
 .media-container > img {
   display: block;
   width: 100%;
-  /*margin: 36px 0;*/
 }
+
+.media-container > iframe {
+  display: block; overflow: hidden;
+  background-color: #111; 
+  /*width: 700px; height: 525px;*/
+}
+
 
 .media-container.dz > img {
   cursor: pointer;
