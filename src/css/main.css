@@ -1,6 +1,18 @@
 body {
   position: relative; overflow:hidden;
   height: 100vh;
+  background-color: #444; color: #eee;
+  font-family: "Source Sans Pro";
+  background: radial-gradient(ellipse at center, #444 0%,#030303 100%);
+
+
+}
+
+
+/*
+body {
+  position: relative; overflow:hidden;
+  height: 100vh;
   background-color: #333;
   background-image: url("img/bg.jpg"); background-position: 50% 50%; background-size: cover;
   font-family: "Source Sans Pro";
@@ -14,7 +26,7 @@ body {
 
 .content-scroller {
   position: absolute;
-  height: 100%; width: 9000px; /* Note: width must (apparently) be set */
+  height: 100%; width: 9000px;
   cursor: move;
   padding: 0 128px;
   box-sizing: content-box;
@@ -107,9 +119,10 @@ svg.title path {
   -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
   transform: rotate(-8deg);
 }
-
+*/
 .viewer {
   background-color: rgba(255, 255, 255, 0.95);
+  color: #111;
 }
 
 .viewer h1 {
@@ -141,13 +154,6 @@ svg.title path {
   margin: 36px 0;
 }
 
-/*
-.media-container.video-ina {
-  background-color: #111; 
-  width: 700px; height: 525px;
-}
-*/
-
 .media-container > img {
   display: block;
   width: 100%;
@@ -156,7 +162,6 @@ svg.title path {
 .media-container > iframe {
   display: block; overflow: hidden;
   background-color: #111; 
-  /*width: 700px; height: 525px;*/
 }
 
 
@@ -173,4 +178,3 @@ svg.title path {
 #viewer-2 {
   background-color: #333;
 }
-
