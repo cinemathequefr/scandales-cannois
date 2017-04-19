@@ -23,34 +23,13 @@ var template = {
         "<div class='media-container {{ m.type }}'>",
           "<% if (m.type === 'img') { %>",
             "<img src='img/{{ m.name }}.jpg' alt='{{ m.title.replace(/(<([^>]+)>)/gi, '') }}' title='{{ m.title.replace(/(<([^>]+)>)/gi, '') }}' data-media='{{ JSON.stringify(m) }}'>",
-          "<% } else if (m.type === 'video-ina' || m.type === 'video-dm') { %>",
+          "<% } else if (m.type === 'video') { %>",
             "<iframe src='{{ m.url }}' width='{{ m.size[0] }}' height='{{ m.size[1] }}' frameborder='0' scrolling='no'></iframe>",
           "<% } %>",
           "<div class='legend'>{{ m.title }}</div>",
         "</div>",
       "<% }); %>",
     "</div>"
-
-
-
-
-    // "<div class='content'>",
-    //   "<h1>{{ date.format('D MMM YYYY') }}<br>{{ title }}</h1>",
-    //   "<div class='text'>{{ text }}</div>",
-    //   "<% _(media).forEach(function (m) {",
-    //   "if (m.type === 'img') { %>",
-    //     "<div class='media-container {{ m.type }}'>",
-    //       "<img src='img/{{ m.name }}.jpg' alt='{{ m.title.replace(/(<([^>]+)>)/gi, '') }}' title='{{ m.title.replace(/(<([^>]+)>)/gi, '') }}' data-media='{{ JSON.stringify(m) }}'>",
-    //       "<div class='legend'>{{ m.title }}</div>",
-    //     "</div>",
-    //   "<% } else if (m.type === 'video-ina') { %>",
-    //     "<div class='media-container {{ m.type }}'>",
-    //       "<iframe src='{{ m.url }}' frameborder='0' scrolling='no'></iframe>",
-    //       "<div class='legend'>{{ m.title }}</div>",
-    //     "</div>",
-    //   "<% }",
-    //   "}); %>",
-    // "</div>"
   ].join(""))
 }
 
@@ -92,7 +71,8 @@ function run (data) {
     scrollX: true,
     scrollbars: false,
     mouseWheel: true,
-    tap: true
+    tap: true,
+    probeType: 1
   });
 
   drop($("svg.title path"), 0, 75, false, "bounceInUp");
