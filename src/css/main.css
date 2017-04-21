@@ -2,14 +2,38 @@ body {
   position: relative; overflow:hidden;
   height: 100vh;
   background-color: #444; color: #eee;
-  font-family: "Raleway", "Lora", "Open Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
   background: radial-gradient(ellipse at center, #444 0%, #030303 100%);
 }
 
 .aside {
   position: fixed;
-  width: 300px; max-width: 33.3vw; height: 100vh;
+  width: 300px; /*max-width: 33.3vw;*/ height: 100vh;
   background-color: #d00;
+}
+
+.aside-content {
+  padding: 30vh 8px;
+  text-align: right;
+}
+
+.aside-content > h1 {
+  margin: 0; padding: 0;
+  font-size: 2.5rem; line-height: 2.5rem;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+}
+
+.aside-content > p {
+  line-height: 1.5;
+}
+
+.fuck {
+  position: absolute;
+  top: 8px;
+  left: 200px; width: 200px; height: 200px;
+  /* left: 175px; width: 250px; height: 250px; */
+  background-image: url("../../img/fuck.png"); background-repeat: no-repeat; background-size: cover;
 }
 
 .content-wrapper {
@@ -55,14 +79,13 @@ a#logocf:hover {
 .thumb {
   position: absolute;
   top: 0; right: 5%; bottom: 0; left: 20%;
-  background-size: cover;
+  background-size: cover; background-repeat: no-repeat;
 }
 
 .thumb-gauge {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 95%;
   background: linear-gradient(to bottom, #f00 0%, #522 100%);
-  clip-path: margin-box(25% 0 0 0);
 }
 
 .thumb-gauge-level {
@@ -78,12 +101,13 @@ a#logocf:hover {
   padding: 8px;
   color: #d00; background-color: #fff;
   font-size: 4vh; line-height: 4vh;
-  font-family: "Raleway", "Open Sans", sans-serif; font-weight: 800; font-style: italic;
+  font-family: "Open Sans", sans-serif; font-weight: 800; font-style: italic;
 }
 
 .viewer {
   font-family: "Raleway", sans-serif;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #fff;
+  /*background-color: rgba(255, 255, 255, 0.95);*/
   color: #111;
 }
 

@@ -58,28 +58,6 @@ function run (data) {
   )
   .value();
 
-  _(data)
-  .forEach(item => {
-    $("<div class='thumb-sizer size4'></div>")
-    // $("<div class='thumb-sizer size" +  ([1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4][item.note] || 1) + "'></div>")
-    .css({
-      // top: ([65, 50, 35][item.y - 1] - _.random(0, 5, true)) + "vh",
-      top: ([60, 40, 20][item.y - 1] - _.random(0, 5, true)) + "vh",
-      left: (item.x * factor + offsetX) + "px",
-    })
-    .appendTo($(".content-scroller"))
-    .html(template.thumb(item))
-    .children(".thumb-cont")
-    .data("item", item);
-
-    gauge(item).on();
-  });
-
-
-  $(window).scroll(() => {
-    console.log($(".content-scroller").scrollLeft());
-  });
-
   scroller = new IScroll(".content-wrapper", {
     scrollY: false,
     scrollX: true,
@@ -88,13 +66,33 @@ function run (data) {
     tap: true
   });
 
-  // drop($("svg.title path"), 0, 75, false, "bounceInUp");
-  // drop($(".thumb-cont"), 200, 10, true, "bounceInDown");
+  gauge.init(data, scroller);
+
+  _(data)
+  .forEach(item => {
+    $("<div class='thumb-sizer size4'></div>")
+    // $("<div class='thumb-sizer size" +  ([1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4][item.note] || 1) + "'></div>")
+    .css({
+      // top: ([65, 50, 35][item.y - 1] - _.random(0, 5, true)) + "vh",
+      top: ([65, 50, 30][item.y - 1] - _.random(0, 5, true)) + "vh",
+      left: (item.x * factor + offsetX) + "px",
+    })
+    .appendTo($(".content-scroller"))
+    .html(template.thumb(item))
+    .children(".thumb-cont")
+    .data("item", item);
+
+    gauge.on(item);
+
+  });
 
   v = new Viewer({
-    width: "100vw",
+    $parent: $(".viewer-placeholder"),
     enableRequestClose: true
   });
+
+
+
 
   $(".thumb-cont").on("tap", function() { // https://github.com/cubiq/iscroll#optionstap
     route("/" + $(this).data("code"));
@@ -138,40 +136,28 @@ function run (data) {
   route.start(true);
 }
 
-/*
-function drop($elems, delay, duration, shuffle, animationType) {
-  $elems.hide().addClass("animated");
-  window.setTimeout(
-    function() {
-      _($elems)
-        .thru(function(items) {
-          return (!!shuffle ? _(items).shuffle().value() : _(items).value());
-        })
-        .forEach(function(item, i) {
-          _.delay(function() {
-            $(item).show().addClass($(item).data("anim") || animationType || "bounceInDown");
-          }, i * (duration || 50));
-        });
-    },
-    (delay || 0)
-  );
-}
-*/
 
-
-function gauge (item) {
-  var $level = $(".thumb-cont[data-code='" + item.code + "']").find(".thumb-gauge-level");
+var gauge = (function () {
+  var countdown;
+  var timer;
   return {
-    on: function () {
-      $(this).off();
-      window.setTimeout(() => {
-        $level.css({
-          bottom: (item.note * 10) + "%"
-        });        
-      }, 200);
+    init: function (data, scroller) {
+      countdown = data.length;
+      timer = window.setInterval(function () {
+        // TODO: check which thumb has become visible and fire gauge
+        console.log("tick");
+        console.log(scroller.x);
+        if (countdown === 0) window.clearInterval(timer);
+      }, 1000);
     },
-    off: function () {
-      $level.css({ bottom: 0 });
+    on: function (item) {
+      window.setTimeout(function () {
+        $(".thumb-cont[data-code='" + item.code + "']").find(".thumb-gauge-level").css({ bottom: (item.note * 10) + "%" });
+      }, 200);
+      countdown = countdown - 1;
+    },
+    off: function (item) {
+      $(".thumb-cont[data-code='" + item.code + "']").find(".thumb-gauge-level").css({ bottom: 0 });
     }
   };
-}
+})();
