@@ -134,6 +134,26 @@
     "note": 6
   },
   {
+    "id": 25,
+    "title": "L'Argent",
+    "director": "Robert Bresson",
+    "year": 1982,
+    "text": "<p>1983. Les projections de <em>Nosthalgia</em> (Andreï Tarkovski) et de L'Argent (Robert Bresson) sont abandonnées en route par une partie des festivaliers, qui tempêtent, entre colère et leur ennui. Sièges qui claquent, sifflets... Rien de bien nouveau sous le soleil cannois, finalement&nbsp;; la routine d'un festival exigeant et d'une sélection pointue, qui ne rencontre pas forcément son public.</p><p>Mais le malaise autour des films se prolonge. Les conférences de presse des deux cinéastes, sur la défensive, sont tendues. Des quiproquos de traduction laissent même croire à Tarkovski que Bresson exige une Palme sinon rien, un caprice qui laisse le cinéaste russe pantois, lui qui vénère depuis ses débuts la simplicité et l'humilité du réalisateur français.</p><p>La cérémonie de clotûre réunit les deux hommes. Récompensés d'un prix inventé à la hâte par le jury (le Grand prix du cinéma de création), censé couronner à la fois leurs films et l'ensemble de leurs carrières, Robert Bresson et Andreï Tarkovski sont appelés sur scène par Orson Welles. La réunion des trois géants devrait enchanter la salle, mais la réception houleuse des deux films a laissé des traces. Bresson est accueilli sous les huées, et Tarkovski à peine plus chaleureusement. La gêne s'installe, Bresson refuse de dire un mot de remerciement quand Tarkovski, face à l'insistance du maître de cérémonie, se contente d'un las «&nbsp;merci beaucoup&nbsp;».</p><p>Robert Bresson, dont c'était le dernier film, ne reviendra jamais sur la Croisette. La dernière image cannoise du cinéaste, avant qu'il ne retourne dans les pénombres des coulisses, restera celle d'un réalisateur conspué, soutenu par son admirateur de toujours.</p>",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/1UtrcJYw384",
+        "title": "La remise de la double Palme",
+        "size": [700, 525]
+      }
+    ],
+    "date": "1983-05-16",
+    "x": 2950,
+    "y": 3,
+    "code": "l-argent",
+    "note": 5
+  },
+  {
     "id": 10,
     "title": "Max, mon amour",
     "director": "Nagisa Oshima",
@@ -233,7 +253,7 @@
     ],
     "date": "1997-05-14",
     "x": 5250,
-    "y": 2,
+    "y": 1,
     "code": "funny-games",
     "note": 7
   },
@@ -259,7 +279,7 @@
     "media": [],
     "date": "1998-05-20",
     "x": 5650,
-    "y": 1,
+    "y": 2,
     "code": "khroustaliov-ma-voiture",
     "note": null
   },

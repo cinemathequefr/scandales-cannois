@@ -2,21 +2,14 @@ body {
   position: relative; overflow:hidden;
   height: 100vh;
   background-color: #444; color: #eee;
-  font-family: "Source Sans Pro";
-  background: radial-gradient(ellipse at center, #444 0%,#030303 100%);
-
-
+  font-family: "Raleway", "Lora", "Open Sans", sans-serif;
+  background: radial-gradient(ellipse at center, #444 0%, #030303 100%);
 }
 
-
-/*
-body {
-  position: relative; overflow:hidden;
-  height: 100vh;
-  background-color: #333;
-  background-image: url("img/bg.jpg"); background-position: 50% 50%; background-size: cover;
-  font-family: "Source Sans Pro";
-
+.aside {
+  position: fixed;
+  width: 300px; max-width: 33.3vw; height: 100vh;
+  background-color: #d00;
 }
 
 .content-wrapper {
@@ -26,7 +19,7 @@ body {
 
 .content-scroller {
   position: absolute;
-  height: 100%; width: 9000px;
+  height: 100%; width: 11000px;
   cursor: move;
   padding: 0 128px;
   box-sizing: content-box;
@@ -46,88 +39,60 @@ a#logocf:hover {
   opacity: 0.85;
 }
 
-
-svg.title {
-  width: 28vw; height: 22.4vw;
-  position: fixed;
-  top: 0px; left: 0;
-  fill: #ff3d47;
-}
-
-svg.title path {
-  -moz-animation-duration: 1s;
-  -moz-animation-delay: 0s;
-  -moz-animation-iteration-count: 1;
-}
-
-
 .thumb-sizer {
   position: absolute;
   cursor: pointer;
   transition: 0.25s;
+  width: 40vh;
 }
-
-.thumb-sizer:hover {
-  transform: translateY(-8px);
-  transition: 0.1s;
-}
-
-
-.thumb-sizer.size1 { width: 25vh; }
-.thumb-sizer.size1 .thumb-text { line-height: 22.5vh; font-size: 1.25rem; }
-
-.thumb-sizer.size2  { width: 27.5vh; }
-.thumb-sizer.size2 .thumb-text { line-height: 24.75vh; font-size: 1.375rem; }
-
-.thumb-sizer.size3  { width: 30vh; }
-.thumb-sizer.size3 .thumb-text { line-height: 27vh; font-size: 1.5rem; }
-
-.thumb-sizer.size4  { width: 32.5vh; }
-.thumb-sizer.size4 .thumb-text { line-height: 29.75vh; font-size: 1.5rem; }
-
 
 .thumb-cont {
   position: relative;
   width: 100%;
-  padding-bottom: 100%;
-  background-color: #fff;
-  box-shadow: -8px -8px 12px rgba(0, 0, 0, 0.25);
+  padding-bottom: 75%;
 }
 
 .thumb {
   position: absolute;
-  top: 5%; right: 5%; bottom: 21.67%; left: 5%;
+  top: 0; right: 5%; bottom: 0; left: 20%;
   background-size: cover;
-  background-color: #fc333c;
 }
 
-.thumb-overlay {
+.thumb-gauge {
   position: absolute;
-  top: 5%; right: 5%; bottom: 21.67%; left: 5%;
-  background-color: rgba(252, 51, 60, 1);
-  mix-blend-mode: lighten;
-  transition: 0.1s;
+  top: 0; right: 0; bottom: 0; left: 95%;
+  background: linear-gradient(to bottom, #f00 0%, #522 100%);
+  clip-path: margin-box(25% 0 0 0);
+}
+
+.thumb-gauge-level {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: #333;
+  transition-property: bottom; transition-duration: 1s; 
 }
 
 .thumb-text {
-  position: absolute; overflow: hidden;
-  top: 0; right: 0; bottom: 0; left: 0;
-  color: #111;
-  text-align: center; 
-  font-weight: 600; font-family: "Permanent Marker";
-  white-space: nowrap;
-  -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
-  transform: rotate(-8deg);
+  position: absolute; left: 0;
+  top: calc(50% - 2vh); min-width: 33.3%; text-align: center;
+  padding: 8px;
+  color: #d00; background-color: #fff;
+  font-size: 4vh; line-height: 4vh;
+  font-family: "Raleway", "Open Sans", sans-serif; font-weight: 800; font-style: italic;
 }
-*/
+
 .viewer {
+  font-family: "Raleway", sans-serif;
   background-color: rgba(255, 255, 255, 0.95);
   color: #111;
 }
 
 .viewer h1 {
-  font-family: "Permanent Marker";
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  font-size: 2.25rem; font-weight: 800;
   margin-bottom: 36px;
+  color: #d00;
 }
 
 .viewer-content {
@@ -145,7 +110,6 @@ svg.title path {
 
 .viewer-content > .content > .text {
   position: relative;
-  font-family: "Lora";
   line-height: 150%;
 }
 
@@ -170,7 +134,7 @@ svg.title path {
 }
 
 .media-container .legend {
-  margin-top: 12px;
+  margin-top: 12px; padding: 4px 0;
   text-align: right;
   font-size: 0.875rem;
 }
