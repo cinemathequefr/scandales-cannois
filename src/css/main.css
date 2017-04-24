@@ -85,7 +85,8 @@ a#logocf:hover {
 .thumb-gauge {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 95%;
-  background: linear-gradient(to bottom, #f00 0%, #522 100%);
+  background: linear-gradient(to bottom, #fcc 0%, #f00 20%, #522 100%);
+  /*background: linear-gradient(to bottom, #f00 0%, #522 100%);*/
 }
 
 .thumb-gauge-level {
