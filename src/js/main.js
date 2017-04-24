@@ -2,13 +2,15 @@ import moment from "moment";
 import Viewer from "./viewer.js";
 import timeline from "./timeline.js";
 // import dz from './deepzoom.js';
-import route from 'riot-route';
+import route from "riot-route";
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g; // Set mustache-style interpolate delimiters
 moment.locale("fr", { monthsShort: "jan_fév_mar_avr_mai_juin_juil_aoû_sep_oct_nov_déc".split("_"), weekdaysShort: "Dim_Lun_Mar_Mer_Jeu_Ven_Sam".split("_") });
 
-var offsetX = 400;
-var factor = 1.25;
+
+var viewportWidth = $(window).outerWidth();
+// console.log(viewportWidth);
+
 
 var template = {
   thumb: _.template([
@@ -38,13 +40,28 @@ var template = {
 
 
 $(function () {
-  $.getJSON("data/data.json").then(run);
+  $.getJSON("data/data.json").then(preload).then(run);
 });
+
+
+function preload (data) {
+  return new Promise((resolve, reject) => { resolve(data); });
+  // return new Promise((resolve, reject) => {
+  //   var queue = new createjs.LoadQueue(true);
+  //   queue.setMaxConnections(10);
+  //   queue.loadManifest("../img/300/" + _(data).map("id").value() + ".jpg");
+  //   queue.on("complete", () => {
+  //     resolve(data);
+  //   });
+  // });
+}
 
 
 function run (data) {
   var v;
   var scroller;
+  var $items = [];
+
 
   data = _(data)
   .sortBy("date")
@@ -52,39 +69,27 @@ function run (data) {
     item => _(item)
       .assign({
         date: moment(item.date),
-        festYear: parseInt((item.date).match(/^\d{4}/)[0], 10) // Festival year
+        festYear: parseInt((item.date).match(/^\d{4}/)[0], 10), // Festival year
+        $el: $("<div>"),
+        seen: false
       })
       .value()
   )
-  .value();
-
-  scroller = new IScroll(".content-wrapper", {
-    scrollY: false,
-    scrollX: true,
-    scrollbars: false,
-    mouseWheel: true,
-    tap: true
-  });
-
-  gauge.init(data, scroller);
-
-  _(data)
   .forEach(item => {
-    $("<div class='thumb-sizer size4'></div>")
-    // $("<div class='thumb-sizer size" +  ([1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4][item.note] || 1) + "'></div>")
+    item.$el
+    .addClass("thumb-sizer")
     .css({
-      // top: ([65, 50, 35][item.y - 1] - _.random(0, 5, true)) + "vh",
       top: ([65, 50, 30][item.y - 1] - _.random(0, 5, true)) + "vh",
-      left: (item.x * factor + offsetX) + "px",
+      left: (item.x) + "px",
     })
     .appendTo($(".content-scroller"))
     .html(template.thumb(item))
     .children(".thumb-cont")
     .data("item", item);
-
-    gauge.on(item);
-
   });
+
+
+
 
   v = new Viewer({
     $parent: $(".viewer-placeholder"),
@@ -92,7 +97,29 @@ function run (data) {
   });
 
 
+  scroller = new IScroll(".content-wrapper", {
+    scrollY: false,
+    scrollX: true,
+    scrollbars: false,
+    mouseWheel: true,
+    tap: true,
+    probeType: 3
+  });
 
+  gauge.init(data, scroller);
+
+  scroller.on("scroll", () => {
+    var w = $(window).width();
+    var x = -scroller.x;
+    var visible = _(data)
+    .filter(item => item.seen === false && item.x + 300 >= x && item.x <= x + w * 0.66) // The "active" area runs horizontally from 300px to .66% of the viewport
+    .forEach((item, i) => {
+      window.setTimeout(() => { gauge.on(item) }, i * 1000);
+      item.seen = true;
+    });
+
+    if (visible.length === 0) scroller.off("scroll"); // All have been seen - stop listening to the scroll event
+  });
 
   $(".thumb-cont").on("tap", function() { // https://github.com/cubiq/iscroll#optionstap
     route("/" + $(this).data("code"));
@@ -137,24 +164,24 @@ function run (data) {
 }
 
 
-var gauge = (function () {
-  var countdown;
-  var timer;
+var gauge = (function () { // TODO: rewrite all this
+  // var countdown;
+  // var timer;
   return {
     init: function (data, scroller) {
-      countdown = data.length;
-      timer = window.setInterval(function () {
-        // TODO: check which thumb has become visible and fire gauge
-        console.log("tick");
-        console.log(scroller.x);
-        if (countdown === 0) window.clearInterval(timer);
-      }, 1000);
+      // countdown = data.length;
+      // timer = window.setInterval(function () {
+      //   // TODO: check which thumb has become visible and fire gauge
+      //   console.log("tick");
+      //   console.log(scroller.x);
+      //   if (countdown === 0) window.clearInterval(timer);
+      // }, 1000);
     },
     on: function (item) {
       window.setTimeout(function () {
         $(".thumb-cont[data-code='" + item.code + "']").find(".thumb-gauge-level").css({ bottom: (item.note * 10) + "%" });
       }, 200);
-      countdown = countdown - 1;
+      // countdown = countdown - 1;
     },
     off: function (item) {
       $(".thumb-cont[data-code='" + item.code + "']").find(".thumb-gauge-level").css({ bottom: 0 });

@@ -7,7 +7,7 @@
     "text": "<p>Décembre 1955&nbsp;: le film d'Alain Resnais <em>Nuit et brouillard</em> est présenté à la commission de contrôle. Celle-ci exige la suppression d'un plan de trois secondes. Objet du délit&nbsp;? Le képi d'un gendarme français surveillant le camp d'internement de Pithiviers en 1941. D'un coup de gouache noire, le cinéaste fait disparaître de la photo le couvre-chef de la honte. Il reçoit le prix Jean-Vigo le mois suivant. Dix ans après la fin de la guerre, <em>Nuit et brouillard</em> devient un document incontournable pour saisir le degré de compréhension du système concentrationnaire hitlérien. Mais avec sa sélection au Festival de Cannes, une nouvelle affaire éclate.</p><p>Avril 1956&nbsp;: le film d'Alain Resnais disparaît curieusement de la liste officielle des films en compétition, remplacé par <em>Tant qu'il y aura des bêtes</em> de Brassaï. On lui reproche ses plans de corps et de cadavres, jugés trop choquants, «&nbsp;incompatibles&nbsp;» avec l'atmosphère de fête cannoise. Qui plus est, il s'agit de ne pas gâcher les relations franco-allemandes, l'ambassade de RFA craignant que le documentaire, consacré aux camps de la mort, ne ravive la haine contre le peuple allemand.</p><p>Familles et associations de déportés s'indignent et menacent de défiler sur la Croisette en tenue rayée. C'en est trop. Jean Cayrol, auteur du texte du film, fait éclater sa colère en publiant une tribune sanglante dans <em>Le Monde</em>&nbsp;: «&nbsp;En arrachant brusquement de l'Histoire les pages qui ne lui plaisent plus, La France refuse d'être la France de la vérité&nbsp;», celle de reconnaître ses responsabilités en matière de déportation. Face à la pression, le film est finalement programmé à Cannes, mais hors compétition, le 29 avril, jour de commémoration nationale des déportés.</p><p>Soutenu par le Parti social-démocrate allemand, <em>Nuit et brouillard</em> est présenté la même année au Festival de Berlin. Dans la salle, le critique Jean de Baroncelli voit le film pour la troisième fois. «&nbsp;Jamais le silence, le recueillement de la foule, ne m'a paru aussi impressionnant qu'à Berlin.&nbsp;»</p>",
     "media": [],
     "date": "1956-04-29",
-    "x": 50,
+    "x": 425,
     "y": 1,
     "code": "nuit-et-brouillard",
     "note": 6
@@ -23,11 +23,14 @@
         "type": "video",
         "url": "http://www.dailymotion.com/embed/video/xirlr1",
         "title": "",
-        "size": [700, 525]
+        "size": [
+          700,
+          525
+        ]
       }
     ],
     "date": "1960-05-11",
-    "x": 500,
+    "x": 875,
     "y": 3,
     "code": "la-dolce-vita",
     "note": 9
@@ -43,11 +46,14 @@
         "type": "video",
         "url": "https://www.youtube.com/embed/YC2deYP2tsU",
         "title": "",
-        "size": [700, 525]
+        "size": [
+          700,
+          525
+        ]
       }
     ],
     "date": "1960-05-15",
-    "x": 525,
+    "x": 900,
     "y": 1,
     "code": "l-avventura",
     "note": 9
@@ -70,7 +76,7 @@
       }
     ],
     "date": "1961-05-17",
-    "x": 900,
+    "x": 1275,
     "y": 2,
     "code": "viridiana",
     "note": 8
@@ -86,11 +92,14 @@
         "type": "video",
         "url": "http://www.dailymotion.com/embed/video/x6g03o",
         "title": "",
-        "size": [700, 525]
+        "size": [
+          700,
+          525
+        ]
       }
     ],
     "date": "1973-05-21",
-    "x": 1450,
+    "x": 1825,
     "y": 1,
     "code": "la-grande-bouffe",
     "note": 10
@@ -106,11 +115,14 @@
         "type": "video",
         "url": "https://player.ina.fr/player/embed/I00019661/1/1b0bd203fbcd702f9bc9b10ac3d0fc21/wide/1",
         "title": "",
-        "size": [700, 525]
+        "size": [
+          700,
+          525
+        ]
       }
-      ],
+    ],
     "date": "1978-05-22",
-    "x": 2000,
+    "x": 2375,
     "y": 3,
     "code": "la-petite",
     "note": 7
@@ -126,11 +138,14 @@
         "type": "video",
         "url": "https://player.ina.fr/player/embed/R08085490/1/1b0bd203fbcd702f9bc9b10ac3d0fc21/wide/1",
         "title": "Andrzej Wajda interviewé sur <em>L'Homme de marbre</em>",
-        "size": [700, 525]
+        "size": [
+          700,
+          525
+        ]
       }
     ],
     "date": "1978-05-29",
-    "x": 2150,
+    "x": 2525,
     "y": 1,
     "code": "l-homme-de-marbre",
     "note": null
@@ -146,11 +161,14 @@
         "type": "video",
         "url": "https://player.ina.fr/player/embed/I00004425/1/1b0bd203fbcd702f9bc9b10ac3d0fc21/wide/1",
         "title": "La remise de la double Palme",
-        "size": [700, 525]
+        "size": [
+          700,
+          525
+        ]
       }
     ],
     "date": "1980-05-17",
-    "x": 2500,
+    "x": 2875,
     "y": 2,
     "code": "que-le-spectacle-commence",
     "note": null
@@ -163,7 +181,7 @@
     "text": "<p>Sept ans après les polémiques qui entourent la sortie du sulfureux <em>Portier de nuit</em>, critiqué pour son «&nbsp;esthétique nazie&nbsp;» et «&nbsp;sa mise en scène malsaine&nbsp;», Liliana Cavani débarque sur la Croisette avec un film qui n'arrange pas sa réputation de «&nbsp;cinéaste maudite&nbsp;».</p><p><em>La Peau</em> est une adaptation du roman autobiographique de Malaparte, celui de la célèbre villa de Capri immortalisée dans <em>Le Mépris</em> de Godard. Officier italien et dandy provocateur, il raconte son rôle d'intermédiaire avec les Alliés, à Naples, au moment de sa libération par les forces américaines. Son but&nbsp;: montrer le choc de deux cultures. Le livre, publié en 1949, est très mal reçu par les Italiens qui n'apprécient guère le tableau d'abominations et de dégoût que l'écrivain fait de sa ville d'adoption au sortir de la guerre, où tout le monde en prend pour son grade, vainqueurs comme vaincus.</p><p>La cinéaste italienne choisit Marcello Mastroianni pour jouer le rôle de Malaparte. Il est sublime et met tout le monde d'accord. Idem pour Burt Lancaster dans le rôle du général Cork. Non, ce qui déplaît au public cannois, ce sont toutes ces atrocités filmées avec un hyper-réalisme qui laisse chacun au bord de la nausée. Et plus encore que les tripes au soleil d'un moribond hurlant sa souffrance, le sang d'une vierge étalé sur le visage de son père ou un fœtus bouilli en guise de plat, c'est la façon dont «&nbsp;Cavani contemple avec mépris ses tristes héros&nbsp;» qui choque certains spectateurs. Avec son final apocalyptique du Vésuve en flammes et l'image d'un corps écrasé par les chars libérateurs, on sort de la projection physiquement et moralement groggy.</p><p>Oui, Cavani fait scandale, mais c'est pour mieux exprimer l'infamie engendrée, dit-elle, par «&nbsp;la stupidité des hommes, incapables de voir le bonheur, de raisonner, de cohabiter&nbsp;». Et elle ajoute&nbsp;: «&nbsp;L'homme n'est doué que pour mettre des barrières et créer des conflits. Tout ça au nom de l'économie et de la paix.&nbsp;»</p>",
     "media": [],
     "date": "1981-05-22",
-    "x": 2750,
+    "x": 3125,
     "y": 1,
     "code": "la-peau",
     "note": 6
@@ -179,11 +197,14 @@
         "type": "video",
         "url": "https://www.youtube.com/embed/1UtrcJYw384",
         "title": "La remise de la double Palme",
-        "size": [700, 525]
+        "size": [
+          700,
+          525
+        ]
       }
     ],
     "date": "1983-05-16",
-    "x": 2950,
+    "x": 3325,
     "y": 3,
     "code": "l-argent",
     "note": 5
@@ -206,7 +227,7 @@
       }
     ],
     "date": "1986-05-13",
-    "x": 3300,
+    "x": 3675,
     "y": 2,
     "code": "max-mon-amour",
     "note": 5
@@ -222,11 +243,14 @@
         "type": "video",
         "url": "https://player.ina.fr/player/embed/CAB87019039/1/1b0bd203fbcd702f9bc9b10ac3d0fc21/wide/1",
         "title": "",
-        "size": [700, 525]
+        "size": [
+          700,
+          525
+        ]
       }
     ],
     "date": "1987-05-14",
-    "x": 3600,
+    "x": 3975,
     "y": 1,
     "code": "sous-le-soleil-de-satan",
     "note": 8
@@ -242,11 +266,14 @@
         "type": "video",
         "url": "https://player.ina.fr/player/embed/CAC89053734/1/1b0bd203fbcd702f9bc9b10ac3d0fc21/wide/1",
         "title": "",
-        "size": [700, 525]
+        "size": [
+          700,
+          525
+        ]
       }
     ],
     "date": "1989-05-14",
-    "x": 4000,
+    "x": 4375,
     "y": 3,
     "code": "sexe-mensonges-et-video",
     "note": 4
@@ -262,11 +289,14 @@
         "type": "video",
         "url": "https://player.ina.fr/player/embed/CAB95031213/1/1b0bd203fbcd702f9bc9b10ac3d0fc21/wide/1",
         "title": "<em>Underground</em>",
-        "size": [700, 525]
+        "size": [
+          700,
+          525
+        ]
       }
     ],
     "date": "1995-05-26",
-    "x": 4600,
+    "x": 4975,
     "y": 3,
     "code": "underground",
     "note": null
@@ -289,7 +319,7 @@
       }
     ],
     "date": "1996-05-17",
-    "x": 4850,
+    "x": 5225,
     "y": 1,
     "code": "crash",
     "note": 8
@@ -308,7 +338,7 @@
       }
     ],
     "date": "1997-05-14",
-    "x": 5250,
+    "x": 5625,
     "y": 1,
     "code": "funny-games",
     "note": 7
@@ -324,11 +354,14 @@
         "type": "video",
         "url": "https://player.ina.fr/player/embed/CAB97139822/1/1b0bd203fbcd702f9bc9b10ac3d0fc21/wide/1",
         "title": "",
-        "size": [700, 525]
+        "size": [
+          700,
+          525
+        ]
       }
     ],
     "date": "1997-05-16",
-    "x": 5350,
+    "x": 5725,
     "y": 3,
     "code": "le-gout-de-la-cerise",
     "note": 2
@@ -341,7 +374,7 @@
     "text": "<p>«&nbsp;À mon avis, tous ces intellectuels de gauche européens n'ont jamais rien compris à ce qui se passait chez nous.&nbsp;» Le Russe Alexeï Guerman est amer. Son dernier film, <em>Khroustaliov, ma voiture&nbsp;!</em>, présenté à Cannes cette année-là, fait figure de grand oublié du palmarès. On parle pourtant de chef-d'œuvre. Comme ses précédents films, quatre en 29 ans, une œuvre puissante, toujours en noir et blanc et dédiée à l'histoire de son pays.</p><p><em>Khroustaliov, ma voiture&nbsp;!</em> n'a rencontré que du mépris de la part des festivaliers. Dans ce tableau cauchemardesque des dernières heures du stalinisme, les torrents d'images, où scènes de violence succèdent aux scènes de folie, plongent le spectateur dans un état de stupeur. Trop de paroles, de personnages, de bruits. Les spectateurs ont le tournis. Un film effrayant, difficile à suivre, hors normes, que le cinéaste russe a mis près de dix ans à sortir, entre censures successives et tournage chaotique. «&nbsp;J'ai refusé de tourner avec de la pellicule française&nbsp;: elle embellit tout. Notre réalité doit être filmée avec notre pellicule&nbsp;!&nbsp;» Car Guerman veut aussi rendre compte de ce qu'il appelle «&nbsp;l'insupportable douleur d'être russe&nbsp;».</p><p>Douloureuse aussi, cette reconnaissance qui peine à venir. «&nbsp;À 60 ans, je connais ma place. Et je sais que l'accueil que j'ai reçu à Cannes est profondément injuste. En France, tout le monde dit admirer Tarkovski. Mais à l'époque où vous avez vu ses premiers films, tout le monde lui crachait dessus. Le problème de l'échec à Cannes, c'est que maintenant, plus personne ne veut acheter le film pour le distribuer en Russie, parce que je n'ai pas eu de prix. Cannes a encore fragilisé ma position économique.&nbsp;»</p><p>À sa mort en 2013, les critiques sont unanimes. Alexeï Guerman est classé parmi les plus grands cinéastes russes contemporains.</p>",
     "media": [],
     "date": "1998-05-20",
-    "x": 5650,
+    "x": 6025,
     "y": 1,
     "code": "khroustaliov-ma-voiture",
     "note": null
@@ -357,11 +390,14 @@
         "type": "video",
         "url": "https://player.ina.fr/player/embed/CAC99022160/1/1b0bd203fbcd702f9bc9b10ac3d0fc21/wide/1",
         "title": "",
-        "size": [700, 525]
+        "size": [
+          700,
+          525
+        ]
       }
     ],
     "date": "1999-05-22",
-    "x": 5950,
+    "x": 6325,
     "y": 3,
     "code": "rosetta-et-l-humanite",
     "note": 8
@@ -377,11 +413,14 @@
         "type": "video",
         "url": "http://www.dailymotion.com/embed/video/x36cdz",
         "title": "",
-        "size": [700, 525]
+        "size": [
+          700,
+          525
+        ]
       }
     ],
     "date": "2002-05-23",
-    "x": 6400,
+    "x": 6775,
     "y": 2,
     "code": "irreversible",
     "note": null
@@ -394,7 +433,7 @@
     "text": "<p>Ceci est bien une pipe. Le scandale, cette année-là, une fellation non simulée entre Chloë Sevigny et Vincent Gallo. La scène se passe dans les dernières minutes de <em>The Brown Bunny</em>, deuxième long métrage de Gallo (après le très apprécié <em>Buffalo '66</em>). Les spectateurs n'y voient qu'une provocation, le climax éclipsant la vacuité d'une œuvre radicale jugée soporifique, irritante, interminable.</p><p>Si le débat fait rage sur la Croisette –&nbsp;Gallo a-t-il utilisé une prothèse pour simuler l'acte sexuel&nbsp;?&nbsp;-, son film n'en reste pas moins un fiasco total. <em>The Brown Bunny</em> est taxé de pire film de l'histoire de Cannes, réalisé et interprété par un type narcissique et prétentieux, capable de traiter de connards tous ceux qui pensent que son pénis est un postiche. Gallo n'a pas la réputation d'être poli et répond aux attaques du critique Roger Ebert sans ménagement&nbsp;: «&nbsp;Il n'est qu'un gros porc avec le physique d'un marchand d'esclaves&nbsp;». Ce à quoi Ebert réplique qu'il pourra maigrir, mais que Gallo sera toujours le réalisateur de <em>The Brown Bunny</em>. Et quand il lui souhaite un cancer du côlon, le critique le mouche encore, lui faisant remarquer que sa coloscopie est bien plus divertissante que son film. Ambiance. De son côté, Chloë Sevigny, icône et égérie incontournable du cinéma indépendant, en fait également les frais. La fameuse scène subversive lui vaut de se faire lâcher par ses agents.</p><p>Face à ce désastre, Gallo consent à revoir sa copie. Il remonte son film, l'écourte d'une demi-heure, et fait, par la même occasion, la paix avec Ebert&nbsp;: «&nbsp;On dit que le montage est l'âme du cinéma. Dans le cas de <em>The Brown Bunny</em>, c'est son salut&nbsp;!&nbsp;»</p>",
     "media": [],
     "date": "2003-05-21",
-    "x": 6700,
+    "x": 7075,
     "y": 1,
     "code": "the-brown-bunny",
     "note": null
@@ -407,7 +446,7 @@
     "text": "<p>Plus de 2 000 spectateurs debout. Ovation de 20 minutes. Du jamais-vu sur la Croisette. La première projection cannoise du film de Michael Moore annonce la couleur. Public conquis, Quentin Tarantino et ses jurés le sont aussi. Ce sera la Palme d'or pour <em>Fahrenheit 9/11</em>.</p><p>Pour autant, certains font la grimace. Qu'est-ce que vient faire ce brûlot anti-Bush parmi les Palmes d'or&nbsp;? Le jury a beau répéter avoir récompensé une œuvre artistique, la presse n'y voit qu'un geste politique inapproprié dans le plus grand festival de cinéma du monde. Mais où est le mal à récompenser un pamphlet&nbsp;? La polémique enfle d'autant plus qu'il se trouve que Moore et Tarantino partagent les mêmes producteurs, les frères Weinstein de Miramax. Certes, mais le président du jury n'a pas été le seul à décider. Alors que reproche t-on vraiment à <em>Fahrenheit 9/11</em>&nbsp;?</p><p>Révélations spectaculaires, archives télévisées montées à la sauce Moore, commentaires sarcastiques... On accuse le film de simplisme et de démagogie. Les méthodes du cinéaste engagé agacent. On n'aime pas son côté moralisateur et donneur de leçon, ni sa façon de se mettre trop en avant. Il s'en défend&nbsp;: «&nbsp;Honnêtement, pensez-vous qu'avec le physique que j'ai, je m'exhibe par plaisir&nbsp;? Non, je déteste ça. Mais j'ai réalisé que je suis devenu la doublure des anonymes qui n'ont pas de tribune d'expression ou les moyens de poser des questions dérangeantes. Alors, à chaque fois que je rue dans les brancards, je le fais pour eux.&nbsp;» Car ce que Moore souhaite avant tout, c'est faire passer son message au plus grand nombre.</p><p>C'est chose faite. Cette Palme d'or lui permet de trouver un distributeur aux États-Unis, avec la garantie d'être vu du public américain, celui «&nbsp;des vendredis soir et du pop-corn&nbsp;», habitué aux émissions de «&nbsp;propagande&nbsp;» télévisées.</p>",
     "media": [],
     "date": "2004-05-17",
-    "x": 7000,
+    "x": 7375,
     "y": 2,
     "code": "fahrenheit-9-11",
     "note": 6
@@ -420,7 +459,7 @@
     "text": "<p><em>Libération</em> du 23 mai 2008. Philippe Azoury et Olivier Séguret sont très énervés&nbsp;: «&nbsp;Ah&nbsp;! Si ce soleil avait aussi pu cramer dans son feu d'enfer les douze trous du cul qui ont tenté de pourrir la projection de leurs ricanements ringards.&nbsp;» La controverse qui éclate sur la Croisette cette année-là est provoquée par le film de Philippe Garrel, héritier «&nbsp;rock&nbsp;» de la Nouvelle Vague. Première sélection du cinéaste à Cannes, <em>La Frontière de l'aube</em> déclenche rires et sifflets dès la première projection matinale. Mais que reproche t-on au juste à cette histoire d'amour fou entre une star de ciné fragile et un photographe&nbsp;?</p><p><em>La Frontière de l'aube</em>, aux allures de film fantastique, est perçu par ses détracteurs comme plat, premier degré, ridicule. Au contraire, pour Azoury et Séguret, avec son noir et blanc somptueux et sépulcral, il rappelle les plus beaux films de vampire des années 20. «&nbsp;Devant des apparitions qui évoquent l'innocence d'un Murnau, ces cons finis riaient.&nbsp;» Si la présence chimique de Laura Smet, qui irradie le film en font chavirer plus d'un, d'autres, comme Eric Neuhoff au Figaro, n'y voient qu'une «&nbsp;revenante boudeuse et croquignolette, entre Blanche-Neige et Poltergeist&nbsp;». Louis Garrel n'est pas épargné&nbsp;: «&nbsp;Il serait urgent de lui expliquer qu'on ne peut pas être à la fois Fernandel et Guy Debord&nbsp;».</p><p>La séance du lendemain est un désastre&nbsp;: la salle est à moitié vide. Préférant se fier aux rumeurs, les festivaliers condamnent aussitôt le film avant même de l'avoir vu. «&nbsp;Laissons de côté les grincheux, les râleurs, les insensibles. Car le dernier film de Philippe Garrel est d'une telle perfection plastique, d'une beauté si saisissante et met en scène des acteurs si incroyables qu'on voudrait jeter aux lions tous ceux qui n'ont pas voulu se laisser porter par cette histoire.&nbsp;» Avec <em>La Frontière de l'aube</em>, on n'avait pas vu un tel affrontement depuis <em>La Maman et la putain</em> d'Eustache en 1973 et <em>L'Avventura</em> d'Antonioni en 1960, deux autres films aux personnages féminins forts et sublimes.</p>",
     "media": [],
     "date": "2008-05-22",
-    "x": 7600,
+    "x": 7975,
     "y": 3,
     "code": "la-frontiere-de-laube",
     "note": 6
@@ -436,11 +475,14 @@
         "type": "video",
         "url": "https://player.ina.fr/player/embed/3912105001008/1/1b0bd203fbcd702f9bc9b10ac3d0fc21/wide/1",
         "title": "",
-        "size": [700, 525]
+        "size": [
+          700,
+          525
+        ]
       }
     ],
     "date": "2009-05-18",
-    "x": 7900,
+    "x": 8275,
     "y": 3,
     "code": "antichrist",
     "note": 9
@@ -456,11 +498,14 @@
         "type": "video",
         "url": "https://player.ina.fr/player/embed/4198111001024/1/1b0bd203fbcd702f9bc9b10ac3d0fc21/wide/1",
         "title": "",
-        "size": [700, 525]
+        "size": [
+          700,
+          525
+        ]
       }
     ],
     "date": "2009-05-21",
-    "x": 8075,
+    "x": 8450,
     "y": 1,
     "code": "hors-la-loi",
     "note": 4
