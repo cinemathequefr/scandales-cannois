@@ -43,7 +43,7 @@ body {
 
 .content-scroller {
   position: absolute;
-  height: 100%; width: 11000px;
+  height: 100%; width: 10000px;
   cursor: move;
   padding: 0 128px;
   box-sizing: content-box;
@@ -86,7 +86,6 @@ a#logocf:hover {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 95%;
   background: linear-gradient(to bottom, #fcc 0%, #f00 20%, #522 100%);
-  /*background: linear-gradient(to bottom, #f00 0%, #522 100%);*/
 }
 
 .thumb-gauge-level {
@@ -108,7 +107,6 @@ a#logocf:hover {
 .viewer {
   font-family: "Raleway", sans-serif;
   background-color: #fff;
-  /*background-color: rgba(255, 255, 255, 0.95);*/
   color: #111;
 }
 
@@ -130,6 +128,7 @@ a#logocf:hover {
   overflow: hidden;
   width: 700px;
   margin: 0 auto;
+  transform: translateX(150px);
 }
 
 

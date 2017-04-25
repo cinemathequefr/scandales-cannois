@@ -11,8 +11,4 @@ $(function () {
   });
 });
 
-
-
-
-
 export default timeline;
