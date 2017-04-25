@@ -83,6 +83,29 @@
   },
   {
     "id": 5,
+    "title": "La Maman et la putain",
+    "director": "Jean Eustache",
+    "year": 1972,
+    "text": "<p>1973, très bon millésime à scandales. A l'instar de <a href='#la-grande-bouffe'>La Grande bouffe</a>, plus gros score au scandalomètre présenté à Cannes la même année, le premier long métrage de Jean Eustache en fait blêmir plus d'un. Ingrid Bergman, présidente du jury, ne cache pas son aversion et regrette que «&nbsp;la France ait cru bon de se faire représenter par ces deux films, les plus sordides et les plus vulgaires du festival&nbsp;». L'actrice n'y peut rien, son jury honore <em>La Maman et la putain</em> de son Grand prix spécial.</p><p>Qu'il fascine, choque ou ennuie, le film d'Eustache divise et ne laisse pas indifférent. Témoignage désenchanté de l'après-68, d'une durée exceptionnelle de 3h30, <em>La Maman et la putain</em> heurte les bonnes âmes par ses dialogues crus et provocants&nbsp;: «&nbsp;J'adore baiser avec les métèques&nbsp;», «&nbsp;Essayez de m'enlever ce tampax&nbsp;». Le récit des états d'âme sentimentaux d'Alexandre (Jean-Pierre Léaud) glisse le spectateur au cœur d'un triangle amoureux qui dérange. Mais plus encore, c'est la mise en scène d'Eustache qui agace. Plans fixes interminables, mouvements de caméra inexistants. Trop statique, mais aussi trop bavard, le film, sans intrigue, est une succession de conversations et de monologues que certains voient comme «&nbsp;un monument d'ennui et un Himalaya de prétention&nbsp;». On n'aime ni le style ni le jeu de Léaud qui «&nbsp;joue faux&nbsp;».</p><p>En filigrane, la vie et les tourments affectifs d'Eustache lui-même, qui fait rejouer aux acteurs ses propres disputes et confidences. Au lendemain d'une projection privée du film, Catherine Garnier, ex-compagne et costumière du cinéaste (qui prêta son appartement pour le tournage), met fin à ses jours en laissant ce mot&nbsp;: «&nbsp;le film est sublime, laissez-le comme il est.&nbsp;» Jean Eustache se suicidera huit ans plus tard à l'âge de 42 ans.</p>",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://player.ina.fr/player/embed/CPF86620030/1/1b0bd203fbcd702f9bc9b10ac3d0fc21/wide/1",
+        "title": "",
+        "size": [
+          700,
+          525
+        ]
+      }
+    ],
+    "date": "1973-05-16",
+    "x": 1600,
+    "y": 3,
+    "code": "la-maman-et-la-putain",
+    "note": null
+  },
+  {
+    "id": 6,
     "title": "La Grande bouffe",
     "director": "Marco Ferreri",
     "year": 1973,
@@ -105,7 +128,7 @@
     "note": 10
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "La Petite",
     "director": "Louis Malle",
     "year": 1977,
@@ -128,7 +151,7 @@
     "note": 7
   },
   {
-    "id": 7,
+    "id": 8,
     "title": "L'Homme de marbre",
     "director": "Andrzej Wajda",
     "year": 1976,
@@ -151,7 +174,7 @@
     "note": null
   },
   {
-    "id": 8,
+    "id": 9,
     "title": "Que le spectacle commence",
     "director": "Bob Fosse",
     "year": 1979,
@@ -174,7 +197,7 @@
     "note": null
   },
   {
-    "id": 9,
+    "id": 10,
     "title": "La Peau",
     "director": "Liliana Cavani",
     "year": 1981,
@@ -187,7 +210,7 @@
     "note": 6
   },
   {
-    "id": 25,
+    "id": 11,
     "title": "L'Argent",
     "director": "Robert Bresson",
     "year": 1982,
@@ -210,7 +233,7 @@
     "note": 5
   },
   {
-    "id": 10,
+    "id": 12,
     "title": "Max, mon amour",
     "director": "Nagisa Oshima",
     "year": 1985,
@@ -233,7 +256,7 @@
     "note": 5
   },
   {
-    "id": 11,
+    "id": 13,
     "title": "Sous le soleil de Satan",
     "director": "Maurice Pialat",
     "year": 1986,
@@ -256,7 +279,7 @@
     "note": 8
   },
   {
-    "id": 12,
+    "id": 14,
     "title": "Sexe, mensonges et vidéo",
     "director": "Steven Soderbergh",
     "year": 1988,
@@ -279,7 +302,7 @@
     "note": 4
   },
   {
-    "id": 13,
+    "id": 15,
     "title": "Underground",
     "director": "Emir Kusturica",
     "year": 1993,
@@ -302,7 +325,7 @@
     "note": null
   },
   {
-    "id": 14,
+    "id": 16,
     "title": "Crash",
     "director": "David Cronenberg",
     "year": 1995,
@@ -325,7 +348,7 @@
     "note": 8
   },
   {
-    "id": 15,
+    "id": 17,
     "title": "Funny Games",
     "director": "Michael Haneke",
     "year": 1996,
@@ -344,7 +367,7 @@
     "note": 7
   },
   {
-    "id": 16,
+    "id": 18,
     "title": "Le Goût de la cerise",
     "director": "Abbas Kiarostami",
     "year": 1996,
@@ -367,7 +390,7 @@
     "note": 2
   },
   {
-    "id": 17,
+    "id": 19,
     "title": "Khroustaliov, ma voiture&nbsp;!",
     "director": "Alexeï Guerman",
     "year": 1997,
@@ -380,7 +403,7 @@
     "note": null
   },
   {
-    "id": 18,
+    "id": 20,
     "title": "Rosetta et L'Humanité",
     "director": "Luc et Jean-Pierre Dardenne",
     "year": 1998,
@@ -403,7 +426,7 @@
     "note": 8
   },
   {
-    "id": 19,
+    "id": 21,
     "title": "Irréversible",
     "director": "Gaspar Noé",
     "year": 2001,
@@ -426,7 +449,7 @@
     "note": null
   },
   {
-    "id": 20,
+    "id": 22,
     "title": "The Brown Bunny",
     "director": "Vincent Gallo",
     "year": 2002,
@@ -439,7 +462,7 @@
     "note": null
   },
   {
-    "id": 21,
+    "id": 23,
     "title": "Fahrenheit 9/11",
     "director": "Michael Moore",
     "year": 2003,
@@ -452,7 +475,7 @@
     "note": 6
   },
   {
-    "id": 22,
+    "id": 24,
     "title": "La Frontière de l'aube",
     "director": "Philippe Garrel",
     "year": 2007,
@@ -465,7 +488,7 @@
     "note": 6
   },
   {
-    "id": 23,
+    "id": 25,
     "title": "Antichrist",
     "director": "Lars von Trier",
     "year": 2008,
@@ -488,7 +511,7 @@
     "note": 9
   },
   {
-    "id": 24,
+    "id": 26,
     "title": "Hors-la-loi",
     "director": "Rachid Bouchareb",
     "year": 2009,

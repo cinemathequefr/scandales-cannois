@@ -88,6 +88,8 @@ function run (data) {
     .data("item", item);
   });
 
+  console.log(data);
+
 
 
 
