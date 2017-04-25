@@ -36,6 +36,8 @@ var template = {
       "<% }); %>",
     "</div>"
   ].join(""))
+<<<<<<< HEAD
+=======
 };
 
 
@@ -54,6 +56,7 @@ function preload (data) {
   //     resolve(data);
   //   });
   // });
+>>>>>>> dev-redesign
 }
 
 
@@ -90,6 +93,8 @@ function run (data) {
     .data("item", item);
   });
 
+  console.log(data);
+
 
 
 
@@ -105,7 +110,11 @@ function run (data) {
     scrollbars: false,
     mouseWheel: true,
     tap: true,
+<<<<<<< HEAD
+    probeType: 1
+=======
     probeType: 3
+>>>>>>> dev-redesign
   });
 
   gauge.init(data, scroller);
