@@ -2,22 +2,27 @@ import moment from "moment";
 import Viewer from "./viewer.js";
 import timeline from "./timeline.js";
 // import dz from './deepzoom.js';
-import route from 'riot-route';
+import route from "riot-route";
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g; // Set mustache-style interpolate delimiters
 moment.locale("fr", { monthsShort: "jan_fév_mar_avr_mai_juin_juil_aoû_sep_oct_nov_déc".split("_"), weekdaysShort: "Dim_Lun_Mar_Mer_Jeu_Ven_Sam".split("_") });
 
+
+var viewportWidth = $(window).outerWidth();
+// console.log(viewportWidth);
+
+
 var template = {
   thumb: _.template([
     "<div class='thumb-cont' data-code='{{ code }}'>",
-      "<div class='thumb' style='background-image:url(img/240x200/{{ id }}.jpg);'></div>",
-      "<div class='thumb-overlay'></div>",
-      "<div class='thumb-text'>{{ date.format('D MMM YYYY') }}</div>",
+      "<div class='thumb' style='background-image:url(img/300/{{ id }}.jpg);'></div>",
+      "<div class='thumb-gauge'><div class='thumb-gauge-level'></div></div>",
+      "<div class='thumb-text'>{{ festYear }}</div>",
     "</div>",
   ].join("")),
   content: _.template([
     "<div class='content'>",
-      "<h1>{{ date.format('D MMM YYYY') }}<br>{{ title }}</h1>",
+      "<h1><em>{{ date.format('D MMM YYYY') }}</em><br>{{ title }}</h1>",
       "<div class='text'>{{ text }}</div>",
       "<% _(media).forEach(function (m) { %>",
         "<div class='media-container {{ m.type }}'>",
@@ -31,40 +36,71 @@ var template = {
       "<% }); %>",
     "</div>"
   ].join(""))
-}
+<<<<<<< HEAD
+=======
+};
+
 
 $(function () {
-  $.getJSON("data/data.json").then(run);
+  $.getJSON("data/data.json").then(preload).then(run);
 });
+
+
+function preload (data) {
+  return new Promise((resolve, reject) => { resolve(data); });
+  // return new Promise((resolve, reject) => {
+  //   var queue = new createjs.LoadQueue(true);
+  //   queue.setMaxConnections(10);
+  //   queue.loadManifest("../img/300/" + _(data).map("id").value() + ".jpg");
+  //   queue.on("complete", () => {
+  //     resolve(data);
+  //   });
+  // });
+>>>>>>> dev-redesign
+}
 
 
 function run (data) {
   var v;
   var scroller;
+  var $items = [];
+
 
   data = _(data)
   .sortBy("date")
   .map(
     item => _(item)
       .assign({
-        date: moment(item.date)
+        date: moment(item.date),
+        festYear: parseInt((item.date).match(/^\d{4}/)[0], 10), // Festival year
+        $el: $("<div>"),
+        seen: false
       })
       .value()
   )
-  .value();
-
-  _(data)
   .forEach(item => {
-    $("<div class='thumb-sizer size" +  ([1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4][item.note] || 1) + "'></div>")
+    item.$el
+    .addClass("thumb-sizer")
     .css({
-      top: ([65, 50, 35][item.y - 1] - _.random(0, 5, true)) + "vh",
+      top: ([65, 50, 30][item.y - 1] - _.random(0, 5, true)) + "vh",
       left: (item.x) + "px",
     })
     .appendTo($(".content-scroller"))
     .html(template.thumb(item))
     .children(".thumb-cont")
-    .data("item", item)
+    .data("item", item);
   });
+
+  console.log(data);
+
+
+
+
+  v = new Viewer({
+    $parent: $(".viewer-placeholder"),
+    enableRequestClose: true
+  });
+
 
   scroller = new IScroll(".content-wrapper", {
     scrollY: false,
@@ -72,15 +108,26 @@ function run (data) {
     scrollbars: false,
     mouseWheel: true,
     tap: true,
+<<<<<<< HEAD
     probeType: 1
+=======
+    probeType: 3
+>>>>>>> dev-redesign
   });
 
-  drop($("svg.title path"), 0, 75, false, "bounceInUp");
-  drop($(".thumb-cont"), 200, 10, true, "bounceInDown");
+  gauge.init(data, scroller);
 
-  var v = new Viewer({
-    width: "100vw",
-    enableRequestClose: true
+  scroller.on("scroll", () => {
+    var w = $(window).width();
+    var x = -scroller.x;
+    var visible = _(data)
+    .filter(item => item.seen === false && item.x + 300 >= x && item.x <= x + w * 0.66) // The "active" area runs horizontally from 300px to .66% of the viewport
+    .forEach((item, i) => {
+      window.setTimeout(() => { gauge.on(item) }, i * 1000);
+      item.seen = true;
+    });
+
+    if (visible.length === 0) scroller.off("scroll"); // All have been seen - stop listening to the scroll event
   });
 
   $(".thumb-cont").on("tap", function() { // https://github.com/cubiq/iscroll#optionstap
@@ -126,20 +173,27 @@ function run (data) {
 }
 
 
-function drop($elems, delay, duration, shuffle, animationType) {
-  $elems.hide().addClass("animated");
-  window.setTimeout(
-    function() {
-      _($elems)
-        .thru(function(items) {
-          return (!!shuffle ? _(items).shuffle().value() : _(items).value());
-        })
-        .forEach(function(item, i) {
-          _.delay(function() {
-            $(item).show().addClass($(item).data("anim") || animationType || "bounceInDown");
-          }, i * (duration || 50));
-        });
+var gauge = (function () { // TODO: rewrite all this
+  // var countdown;
+  // var timer;
+  return {
+    init: function (data, scroller) {
+      // countdown = data.length;
+      // timer = window.setInterval(function () {
+      //   // TODO: check which thumb has become visible and fire gauge
+      //   console.log("tick");
+      //   console.log(scroller.x);
+      //   if (countdown === 0) window.clearInterval(timer);
+      // }, 1000);
     },
-    (delay || 0)
-  );
-}
+    on: function (item) {
+      window.setTimeout(function () {
+        $(".thumb-cont[data-code='" + item.code + "']").find(".thumb-gauge-level").css({ bottom: (item.note * 10) + "%" });
+      }, 200);
+      // countdown = countdown - 1;
+    },
+    off: function (item) {
+      $(".thumb-cont[data-code='" + item.code + "']").find(".thumb-gauge-level").css({ bottom: 0 });
+    }
+  };
+})();
