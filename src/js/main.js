@@ -4,7 +4,7 @@ import timeline from "./timeline.js";
 import route from "riot-route";
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g; // Set mustache-style interpolate delimiters
-moment.locale("fr", { monthsShort: "jan_fév_mar_avr_mai_juin_juil_aoû_sep_oct_nov_déc".split("_"), weekdaysShort: "Dim_Lun_Mar_Mer_Jeu_Ven_Sam".split("_") });
+moment.locale("fr", { monthsShort: "jan_fév_mar_avril_mai_juin_juil_aoû_sep_oct_nov_déc".split("_"), weekdaysShort: "Dim_Lun_Mar_Mer_Jeu_Ven_Sam".split("_") });
 
 var viewportWidth;
 
@@ -130,6 +130,7 @@ function run (data) {
   });
 
   route("/*", function (code) {
+    updateAnalytics();
     var $source = $(".thumb-cont[data-code=" + code + "]");
     if ($source.length > 0) {
       scroller.scrollToElement($source.get(0), 250, true, true, IScroll.utils.ease.quadratic);
@@ -142,10 +143,16 @@ function run (data) {
   });
 
   route(function () { // Fallback
+    updateAnalytics();
     route("/");
   });
 
   route.start(true);
+}
+
+
+function updateAnalytics () {
+  ga("send", "pageview", document.location.href);
 }
 
 
