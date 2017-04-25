@@ -1,16 +1,18 @@
 import moment from "moment";
 import Viewer from "./viewer.js";
 import timeline from "./timeline.js";
-// import dz from './deepzoom.js';
 import route from "riot-route";
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g; // Set mustache-style interpolate delimiters
 moment.locale("fr", { monthsShort: "jan_fév_mar_avr_mai_juin_juil_aoû_sep_oct_nov_déc".split("_"), weekdaysShort: "Dim_Lun_Mar_Mer_Jeu_Ven_Sam".split("_") });
 
+var viewportWidth;
 
-var viewportWidth = $(window).outerWidth();
-// console.log(viewportWidth);
-
+$(window)
+.on("resize", () => {
+  viewportWidth = $(window).outerWidth();
+})
+.trigger("resize");
 
 var template = {
   thumb: _.template([
@@ -36,35 +38,29 @@ var template = {
       "<% }); %>",
     "</div>"
   ].join(""))
-<<<<<<< HEAD
-=======
 };
 
 
 $(function () {
-  $.getJSON("data/data.json").then(preload).then(run);
+  $.getJSON("data/data.json").then(run);
+  // $.getJSON("data/data.json").then(preload).then(run);
 });
 
-
-function preload (data) {
-  return new Promise((resolve, reject) => { resolve(data); });
-  // return new Promise((resolve, reject) => {
-  //   var queue = new createjs.LoadQueue(true);
-  //   queue.setMaxConnections(10);
-  //   queue.loadManifest("../img/300/" + _(data).map("id").value() + ".jpg");
-  //   queue.on("complete", () => {
-  //     resolve(data);
-  //   });
-  // });
->>>>>>> dev-redesign
-}
-
+// function preload (data) {
+//   return new Promise((resolve, reject) => {
+//     var queue = new createjs.LoadQueue(true);
+//     queue.setMaxConnections(10);
+//     queue.loadManifest("../img/300/" + _(data).map("id").value() + ".jpg");
+//     queue.on("complete", () => {
+//       resolve(data);
+//     });
+//   });
+// }
 
 function run (data) {
   var v;
   var scroller;
   var $items = [];
-
 
   data = _(data)
   .sortBy("date")
@@ -91,16 +87,10 @@ function run (data) {
     .data("item", item);
   });
 
-  console.log(data);
-
-
-
-
   v = new Viewer({
     $parent: $(".viewer-placeholder"),
     enableRequestClose: true
   });
-
 
   scroller = new IScroll(".content-wrapper", {
     scrollY: false,
@@ -108,27 +98,11 @@ function run (data) {
     scrollbars: false,
     mouseWheel: true,
     tap: true,
-<<<<<<< HEAD
-    probeType: 1
-=======
     probeType: 3
->>>>>>> dev-redesign
   });
 
-  gauge.init(data, scroller);
-
-  scroller.on("scroll", () => {
-    var w = $(window).width();
-    var x = -scroller.x;
-    var visible = _(data)
-    .filter(item => item.seen === false && item.x + 300 >= x && item.x <= x + w * 0.66) // The "active" area runs horizontally from 300px to .66% of the viewport
-    .forEach((item, i) => {
-      window.setTimeout(() => { gauge.on(item) }, i * 1000);
-      item.seen = true;
-    });
-
-    if (visible.length === 0) scroller.off("scroll"); // All have been seen - stop listening to the scroll event
-  });
+  scroller.on("scroll", () => { probeVisibleItems(scroller, data) });
+  probeVisibleItems(scroller, data);
 
   $(".thumb-cont").on("tap", function() { // https://github.com/cubiq/iscroll#optionstap
     route("/" + $(this).data("code"));
@@ -173,27 +147,18 @@ function run (data) {
 }
 
 
-var gauge = (function () { // TODO: rewrite all this
-  // var countdown;
-  // var timer;
-  return {
-    init: function (data, scroller) {
-      // countdown = data.length;
-      // timer = window.setInterval(function () {
-      //   // TODO: check which thumb has become visible and fire gauge
-      //   console.log("tick");
-      //   console.log(scroller.x);
-      //   if (countdown === 0) window.clearInterval(timer);
-      // }, 1000);
-    },
-    on: function (item) {
-      window.setTimeout(function () {
-        $(".thumb-cont[data-code='" + item.code + "']").find(".thumb-gauge-level").css({ bottom: (item.note * 10) + "%" });
-      }, 200);
-      // countdown = countdown - 1;
-    },
-    off: function (item) {
-      $(".thumb-cont[data-code='" + item.code + "']").find(".thumb-gauge-level").css({ bottom: 0 });
-    }
-  };
-})();
+function probeVisibleItems (scroller, data) {
+  var x = -scroller.x;
+  var visible = _(data)
+  .filter(item => item.seen === false && item.x + 300 >= x && item.x <= x + viewportWidth * 0.66) // The "active" area runs horizontally from 300px to .66% of the viewport
+  .forEach((item, i) => {
+    window.setTimeout(() => { gauge(item) }, i * 1500);
+    item.seen = true;
+  });
+  if (visible.length === 0) scroller.off("scroll"); // All have been seen - stop listening to the scroll event
+}
+
+
+function gauge (item) {
+  $(".thumb-cont[data-code='" + item.code + "']").find(".thumb-gauge-level").css({ bottom: (item.note * 10) + "%" });
+}
