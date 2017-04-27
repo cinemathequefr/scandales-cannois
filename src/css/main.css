@@ -43,7 +43,7 @@ body {
 
 .content-scroller {
   position: absolute;
-  height: 100%; width: 10000px;
+  height: 100%; width: 9000px;
   cursor: move;
   padding: 0 128px;
   box-sizing: content-box;
